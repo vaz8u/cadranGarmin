@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <fonts>
+        <font id="DigitalFont" filename="fonts/digitalfont.fnt"/>
+    </fonts>
+
+        <bitmap id='BackgroundImage' filename='gif.gif' />
+        <animation id='BackgroundAnimation' filename='gif.mmm' />
+</resources>

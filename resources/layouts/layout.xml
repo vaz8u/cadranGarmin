@@ -1,0 +1,9 @@
+<layout id="WatchFace">
+    <label id='HourLabel' x='100' y='100' font='Graphics.FONT_LARGE' justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_RED' />
+    <label id='HourLabel2' x='130' y='100' font='Graphics.FONT_LARGE' justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_BLUE' />
+    <label id='MinuteLabel' x='170' y='100' font='Graphics.FONT_LARGE' justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_GREEN' />
+    <label id='MinuteLabel2' x='200' y='100' font='Graphics.FONT_LARGE' justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_GREEN' />
+    <label id='SecondLabel' x='230' y='100' font='Graphics.FONT_LARGE' justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_YELLOW' />
+    <label id='SecondLabel2' x='260' y='100' font='Graphics.FONT_LARGE' justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_YELLOW' />
+    <label id='ColonLabel' x='150' y='100' font='Graphics.FONT_MEDIUM' justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+</layout>

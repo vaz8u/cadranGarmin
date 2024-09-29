@@ -1,0 +1,6 @@
+
+.DS_Store
+bin/gen/
+bin/mir/
+bin/internat-mir/
+*.debug.xml
