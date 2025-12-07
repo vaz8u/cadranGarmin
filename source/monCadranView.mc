@@ -14,8 +14,9 @@ class monCadranView extends WatchUi.WatchFace {
 
     function initialize() {
         WatchFace.initialize();
-        animation  = new WatchUi.AnimationLayer(Rez.Drawables.BackgroundAnimation, {:locX=>100, :locY=>100});
-        addLayer(animation);
+    //    animation  = new WatchUi.AnimationLayer(Rez.Drawables.BackgroundAnimation, {:locX=>100, :locY=>100});
+    //    addLayer(animation);
+
     }
 
     // Load your resources here
@@ -29,67 +30,87 @@ class monCadranView extends WatchUi.WatchFace {
     function onShow() as Void {
         _timer = new Timer.Timer();
         _timer.start(method(:onTimer), 1000, true);
-        digital_font = WatchUi.loadResource(Rez.Fonts.DigitalFont);
-        //animation.play({:locX=>100, :locY=>100});
+       // digital_font = WatchUi.loadResource(Rez.Fonts.DigitalFont);
+        digital_font = WatchUi.loadResource(Rez.Fonts.Digital7Italic_);
         View.onShow();
     }
 
     function onUpdate(dc as Dc) as Void {
-    // Clear the screen
-    dc.clear();
+        // Clear the screen
+        dc.clear();
 
-    // Vérifier si l'animation est terminée
-    if (animationFinished) {
-        animation.stop();
-        animation.play({:locX=>100, :locY=>100});
-        animationFinished = false;
+        // background
+        var _firstHour = View.findDrawableById("_HourLabel") as Text;
+        _firstHour.setFont(digital_font);
+        _firstHour.setText(8.toString());
+        _firstHour.setSize(50,50);
+
+        var _secondHour = View.findDrawableById("_HourLabel2") as Text;
+        _secondHour.setText(8.toString());
+        _secondHour.setFont(digital_font);
+
+        var _firstMinute = View.findDrawableById("_MinuteLabel") as Text;
+        _firstMinute.setText(8.toString());
+        _firstMinute.setFont(digital_font);
+
+        var _secondMinute = View.findDrawableById("_MinuteLabel2") as Text;
+        _secondMinute.setText(8.toString());
+        _secondMinute.setFont(digital_font);
+
+        var _firstSecond = View.findDrawableById("_SecondLabel") as Text;
+        _firstSecond.setText(8.toString());
+        _firstSecond.setFont(digital_font);
+
+        var _secondSecond = View.findDrawableById("_SecondLabel2") as Text;
+        _secondSecond.setText(8.toString());
+        _secondSecond.setFont(digital_font);  
+
+        // Dessiner le reste de l'interface utilisateur
+        var clockTime = System.getClockTime();
+        var hourString = Lang.format("$1$", [clockTime.hour.format("%02d")]) as String; 
+        var minuteString = Lang.format("$1$", [clockTime.min.format("%02d")]) as String;
+        var secondString = Lang.format("$1$", [clockTime.sec.format("%02d")]) as String;
+
+        var firstHour = View.findDrawableById("HourLabel") as Text;
+        firstHour.setText(hourString.toCharArray()[0].toString());
+        firstHour.setFont(digital_font);
+        //firstHour.setColor(Graphics.COLOR_PINK);
+
+        var secondHour = View.findDrawableById("HourLabel2") as Text;
+        secondHour.setText(hourString.toCharArray()[1].toString());
+        secondHour.setFont(digital_font);
+
+        var firstMinute = View.findDrawableById("MinuteLabel") as Text;
+        firstMinute.setText(minuteString.toCharArray()[0].toString());
+        firstMinute.setFont(digital_font);
+
+        var secondMinute = View.findDrawableById("MinuteLabel2") as Text;
+        secondMinute.setText(minuteString.toCharArray()[1].toString());
+        secondMinute.setFont(digital_font);
+
+        var firstSecond = View.findDrawableById("SecondLabel") as Text;
+        firstSecond.setText(secondString.toCharArray()[0].toString());
+        firstSecond.setFont(digital_font);
+        
+
+        var secondSecond = View.findDrawableById("SecondLabel2") as Text;
+        secondSecond.setText(secondString.toCharArray()[1].toString());
+        secondSecond.setFont(digital_font);  
+
+        var colon = View.findDrawableById("ColonLabel") as Text;
+        colon.setFont(digital_font);
+        if (_showColon) {
+            colon.setText(":");
+        } else {
+            colon.setText(" ");
+        }
+
+        View.onUpdate(dc);
     }
 
-    // Dessiner le reste de l'interface utilisateur
-    var clockTime = System.getClockTime();
-    var hourString = Lang.format("$1$", [clockTime.hour.format("%02d")]) as String; 
-    var minuteString = Lang.format("$1$", [clockTime.min.format("%02d")]) as String;
-    var secondString = Lang.format("$1$", [clockTime.sec.format("%02d")]) as String;
-
-    var firstHour = View.findDrawableById("HourLabel") as Text;
-    firstHour.setText(hourString.toCharArray()[0].toString());
-    firstHour.setFont(digital_font);
-    firstHour.setColor(Graphics.COLOR_PINK);
-
-    var secondHour = View.findDrawableById("HourLabel2") as Text;
-    secondHour.setText(hourString.toCharArray()[1].toString());
-    secondHour.setFont(digital_font);
-
-    var firstMinute = View.findDrawableById("MinuteLabel") as Text;
-    firstMinute.setText(minuteString.toCharArray()[0].toString());
-    firstMinute.setFont(digital_font);
-
-    var secondMinute = View.findDrawableById("MinuteLabel2") as Text;
-    secondMinute.setText(minuteString.toCharArray()[1].toString());
-    secondMinute.setFont(digital_font);
-
-    var firstSecond = View.findDrawableById("SecondLabel") as Text;
-    firstSecond.setText(secondString.toCharArray()[0].toString());
-    firstSecond.setFont(digital_font);
-
-    var secondSecond = View.findDrawableById("SecondLabel2") as Text;
-    secondSecond.setText(secondString.toCharArray()[1].toString());
-    secondSecond.setFont(digital_font);  
-
-    var colon = View.findDrawableById("ColonLabel") as Text;
-    colon.setFont(digital_font);
-    if (_showColon) {
-        colon.setText(":");
-    } else {
-        colon.setText(" ");
+    function onAnimationFinished() as Void {
+        animationFinished = true;
     }
-
-    View.onUpdate(dc);
-}
-
-function onAnimationFinished() as Void {
-    animationFinished = true;
-}
 
 
     // Timer callback to toggle the colon

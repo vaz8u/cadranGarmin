@@ -2,8 +2,11 @@
 <resources>
     <fonts>
         <font id="DigitalFont" filename="fonts/digitalfont.fnt"/>
+        <font id="Digital7Italic" filename="fonts/d2/digital-7-italic.fnt" antialias="true"/>
+        <font id="Digital7Italic_" filename="fonts/dig/digital.fnt" antialias="true"/>
+
     </fonts>
 
-        <bitmap id='BackgroundImage' filename='gif.gif' />
-        <animation id='BackgroundAnimation' filename='gif.mmm' />
+       <bitmap id='BackgroundImage' filename='gif.gif' /> 
+    <!--  <animation id='BackgroundAnimation' filename='gif.mmm' />-->  
 </resources>
