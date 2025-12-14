@@ -9,11 +9,16 @@
     <label id='_SecondLabel'  x='275' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0xC5C6C2' />
     <label id='_SecondLabel2' x='305' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0xC5C6C2' />
     <!-- Heure, minutes secondes clignos -->
-    <label id='HourLabel'     x='85' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x272731' />
-    <label id='HourLabel2'    x='130' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x272731' />
-    <label id='MinuteLabel'   x='190' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x272731' />
-    <label id='MinuteLabel2'  x='235' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x272731' />
-    <label id='SecondLabel'   x='275' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x272731' />
-    <label id='SecondLabel2'  x='305' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x272731' />
-    <label id='ColonLabel'    x='160' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x272731' />
+    <label id='HourLabel'     x='85' y='175'    justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x000000' />
+    <label id='HourLabel2'    x='130' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x000000' />
+    <label id='MinuteLabel'   x='190' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x000000' />
+    <label id='MinuteLabel2'  x='235' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x000000' />
+    <label id='SecondLabel'   x='275' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x000000' />
+    <label id='SecondLabel2'  x='305' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x000000' />
+    <label id='ColonLabel'    x='160' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x000000' />
+
+    <label id="DayNameLabel"    x="270" y="140"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="0x000000" />
+
+    <label id="TemperatureLabel" x="130" y="140"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="0x000000" />
+    <label id="WeatherIcon"  x="85" y="145"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="0x000000" />
 </layout>

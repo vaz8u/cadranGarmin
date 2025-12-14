@@ -6,6 +6,8 @@
         <font id="ds_digital_i" filename="fonts/ds_digital_i/ds_digital_i.fnt" antialias="true"/>
         <font id="ds_digital_b_i" filename="fonts/ds_digital_b_i/ds_digital_b_i.fnt" antialias="true"/>
         <font id="ds_digital_b_i_s" filename="fonts/plus_petit/plus_petit.fnt" antialias="true"/>
+        <font id="font_date" filename="fonts/date/date.fnt" antialias="true"/>
+        <font id="font_weather" filename="fonts/weather-icon/weather-icon.fnt" antialias="true"/>
 
     </fonts>
 

@@ -6,96 +6,114 @@ import Toybox.Lang;
 import Toybox.System;
 [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [WatchUi,4,14,21]; ]
 import Toybox.WatchUi;
-[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Timer,5,14,19]; ]
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Time,5,14,18]; ]
+import Toybox.Time;
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Timer,6,14,19]; ]
 import Toybox.Timer;
-[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 7; @symbol_classdef = [monCadranView,7,6,19]; @symbol_extends<0> = [WatchUi,7,28,35]; @symbol_extends<1> = [WatchFace,7,36,45]; ]
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Weather,7,14,21]; ]
+import Toybox.Weather;
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 10; @symbol_classdef = [monCadranView,10,6,19]; @symbol_extends<0> = [WatchUi,10,28,35]; @symbol_extends<1> = [WatchFace,10,36,45]; ]
 class monCadranView extends WatchUi.WatchFace {
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 7; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 10; ]
     <init> {
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 13 8 ]
-        symbol [ WatchUi %tmp.1 13 27 34 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 15 8 ]
+        symbol [ WatchUi %tmp.1 15 27 34 ];
         %tmp.1 = getm $.Toybox.WatchUi;
-        symbol [ loadResource %tmp.2 13 35 47 ];
+        symbol [ loadResource %tmp.2 15 35 47 ];
         %tmp.2 = getv function %tmp.1 :loadResource;
-        symbol [ Rez %tmp.4 13 48 51 ];
+        symbol [ Rez %tmp.4 15 48 51 ];
         %tmp.4 = getv ? :Rez;
-        symbol [ Drawables %tmp.5 13 52 61 ];
+        symbol [ Drawables %tmp.5 15 52 61 ];
         %tmp.5 = getv %tmp.4 :Drawables;
-        symbol [ g1 %tmp.6 13 62 64 ];
+        symbol [ g1 %tmp.6 15 62 64 ];
         %tmp.6 = getv %tmp.5 :g1;
         %tmp.7 = invoke %tmp.1 %tmp.2(%tmp.6);
         putv self :background_image %tmp.7;
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 7; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 10; ]
     static
     <init> {
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 8; @position = 8; @symbol_vardef = [_timer,8,8,14]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 11; @position = 8; @symbol_vardef = [_timer,11,8,14]; ]
     var _timer;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 9; @position = 8; @symbol_vardef = [_showColon,9,8,18]; ]
-    var _showColon = true;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 10; @position = 8; @symbol_vardef = [digital_font,10,8,20]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 12; @position = 8; @symbol_vardef = [digital_font,12,8,20]; ]
     var digital_font = null;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 11; @position = 8; @symbol_vardef = [digital_font_small,11,8,26]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 13; @position = 8; @symbol_vardef = [digital_font_small,13,8,26]; ]
     var digital_font_small = null;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 12; @position = 8; @symbol_vardef = [bitmap,12,8,14]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 14; @position = 8; @symbol_vardef = [bitmap,14,8,14]; ]
     var bitmap = null;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 13; @position = 8; @symbol_vardef = [background_image,13,8,24]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 15; @position = 8; @symbol_vardef = [background_image,15,8,24]; ]
     var background_image;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 14; @position = 8; @symbol_vardef = [animation,14,8,17]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 16; @position = 8; @symbol_vardef = [animation,16,8,17]; ]
     var animation = null;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 15; @position = 8; @symbol_vardef = [animationFinished,15,8,25]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 17; @position = 8; @symbol_vardef = [animationFinished,17,8,25]; ]
     var animationFinished = true;
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 18; @symbol_functiondef = [initialize,18,13,23]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 18; @position = 8; @symbol_vardef = [jour,18,8,12]; ]
+    var jour = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 19; @position = 8; @symbol_vardef = [nom_jour,19,8,16]; ]
+    var nom_jour = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 20; @position = 8; @symbol_vardef = [font_date,20,8,17]; ]
+    var font_date = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 21; @position = 8; @symbol_vardef = [temperature,21,8,19]; ]
+    var temperature = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 22; @position = 8; @symbol_vardef = [temperatureLogo,22,8,23]; ]
+    var temperatureLogo = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 23; @position = 8; @symbol_vardef = [font_weather,23,8,20]; ]
+    var font_weather = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 24; @position = 8; @symbol_vardef = [mWeatherTimer,24,8,21]; ]
+    var mWeatherTimer = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 25; @position = 8; @symbol_vardef = [isNight,25,8,15]; ]
+    var isNight = null;
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 27; @symbol_functiondef = [initialize,27,13,23]; ]
     function initialize() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_18_26_21_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 19 8 ]
-        symbol [ WatchFace %tmp.2 19 8 17 ];
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_27_26_29_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 28 8 ]
+        symbol [ WatchFace %tmp.2 28 8 17 ];
         %tmp.2 = getv ? :WatchFace;
-        symbol [ initialize %tmp.3 19 18 28 ];
+        symbol [ initialize %tmp.3 28 18 28 ];
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_18_26_21_4_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_27_26_29_4_stop:
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 24; @symbol_functiondef = [onLayout,24,13,21]; @symbol_param<0> = [dc,24,22,24]; @symbol_param<0>_type<0> = [Dc,24,28,30]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 32; @symbol_functiondef = [onLayout,32,13,21]; @symbol_param<0> = [dc,32,22,24]; @symbol_param<0>_type<0> = [Dc,32,28,30]; ]
     function onLayout(dc as Dc) as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_24_40_31_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 25 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_32_40_39_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 33 8 ]
         %tmp.1 = self;
-        symbol [ setLayout %tmp.2 25 8 17 ];
+        symbol [ setLayout %tmp.2 33 8 17 ];
         %tmp.2 = getv function %tmp.1 :setLayout;
-        symbol [ Rez %tmp.4 25 18 21 ];
+        symbol [ Rez %tmp.4 33 18 21 ];
         %tmp.4 = getv ? :Rez;
-        symbol [ Layouts %tmp.5 25 22 29 ];
+        symbol [ Layouts %tmp.5 33 22 29 ];
         %tmp.5 = getv %tmp.4 :Layouts;
-        symbol [ WatchFace %tmp.6 25 30 39 ];
+        symbol [ WatchFace %tmp.6 33 30 39 ];
         %tmp.6 = getv function %tmp.5 :WatchFace;
         %tmp.7 = lgetv %dc;
-        symbol [ dc %tmp.7 25 40 42 ];
+        symbol [ dc %tmp.7 33 40 42 ];
         %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
         invoke %tmp.1 %tmp.2(%tmp.8);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 26 8 ]
-        symbol [ WatchUi %tmp.11 26 21 28 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 34 8 ]
+        symbol [ WatchUi %tmp.11 34 21 28 ];
         %tmp.11 = getm $.Toybox.WatchUi;
-        symbol [ Bitmap %tmp.12 26 29 35 ];
+        symbol [ Bitmap %tmp.12 34 29 35 ];
         %tmp.12 = getv function ? %tmp.11 :Bitmap;
         %tmp.13 = newd 3;
         %tmp.15 = const :rezId;
-        symbol [ rezId %tmp.15 27 13 18 const ];
-        symbol [ background_image %tmp.17 27 20 36 ];
+        symbol [ rezId %tmp.15 35 13 18 const ];
+        symbol [ background_image %tmp.17 35 20 36 ];
         %tmp.17 = getv ? :background_image;
         %tmp.18 = dup %tmp.13;
         %tmp.19 = aputv %tmp.18 %tmp.15 %tmp.17;
         %tmp.21 = const :locX;
-        symbol [ locX %tmp.21 28 13 17 const ];
+        symbol [ locX %tmp.21 36 13 17 const ];
         %tmp.22 = lgetv %dc;
-        symbol [ dc %tmp.22 28 21 23 ];
-        symbol [ getWidth %tmp.23 28 24 32 ];
+        symbol [ dc %tmp.22 36 21 23 ];
+        symbol [ getWidth %tmp.23 36 24 32 ];
         %tmp.23 = getv function %tmp.22 :getWidth;
         %tmp.24 = invoke %tmp.22 %tmp.23();
-        symbol [ background_image %tmp.26 28 37 53 ];
+        symbol [ background_image %tmp.26 36 37 53 ];
         %tmp.26 = getv ? :background_image;
-        symbol [ getWidth %tmp.27 28 54 62 ];
+        symbol [ getWidth %tmp.27 36 54 62 ];
         %tmp.27 = getv function %tmp.26 :getWidth;
         %tmp.28 = invoke %tmp.26 %tmp.27();
         %tmp.29 = sub %tmp.24 %tmp.28;
@@ -104,15 +122,15 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_24_40_31_4
         %tmp.32 = dup %tmp.19;
         %tmp.33 = aputv %tmp.32 %tmp.21 %tmp.31;
         %tmp.35 = const :locY;
-        symbol [ locY %tmp.35 29 13 17 const ];
+        symbol [ locY %tmp.35 37 13 17 const ];
         %tmp.36 = lgetv %dc;
-        symbol [ dc %tmp.36 29 21 23 ];
-        symbol [ getHeight %tmp.37 29 24 33 ];
+        symbol [ dc %tmp.36 37 21 23 ];
+        symbol [ getHeight %tmp.37 37 24 33 ];
         %tmp.37 = getv function %tmp.36 :getHeight;
         %tmp.38 = invoke %tmp.36 %tmp.37();
-        symbol [ background_image %tmp.40 29 38 54 ];
+        symbol [ background_image %tmp.40 37 38 54 ];
         %tmp.40 = getv ? :background_image;
-        symbol [ getHeight %tmp.41 29 55 64 ];
+        symbol [ getHeight %tmp.41 37 55 64 ];
         %tmp.41 = getv function %tmp.40 :getHeight;
         %tmp.42 = invoke %tmp.40 %tmp.41();
         %tmp.43 = sub %tmp.38 %tmp.42;
@@ -121,466 +139,1570 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_24_40_31_4
         %tmp.46 = dup %tmp.33;
         %tmp.47 = aputv %tmp.46 %tmp.35 %tmp.45;
         %tmp.9 = newc %tmp.12 (%tmp.47);
-        symbol [ bitmap ? 26 8 14 ];
+        symbol [ bitmap ? 34 8 14 ];
         putv self :bitmap %tmp.9;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_24_40_31_4_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_32_40_39_4_stop:
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 36; @symbol_functiondef = [onShow,36,13,19]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 44; @symbol_functiondef = [onShow,44,13,19]; ]
     function onShow() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_36_30_42_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 37 8 ]
-        symbol [ Timer %tmp.3 37 21 26 ];
-        %tmp.3 = getm $.Toybox.Timer;
-        symbol [ Timer %tmp.4 37 27 32 ];
-        %tmp.4 = getv function ? %tmp.3 :Timer;
-        %tmp.1 = newc %tmp.4 ();
-        symbol [ _timer ? 37 8 14 ];
-        putv self :_timer %tmp.1;
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 38 8 ]
-        symbol [ _timer %tmp.6 38 8 14 ];
-        %tmp.6 = getv ? :_timer;
-        symbol [ start %tmp.7 38 15 20 ];
-        %tmp.7 = getv function %tmp.6 :start;
-        %tmp.8 = self;
-        symbol [ method %tmp.9 38 21 27 ];
-        %tmp.9 = getv function %tmp.8 :method;
-        %tmp.11 = const :onTimer;
-        symbol [ onTimer %tmp.11 38 29 36 const ];
-        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.11);
-        %tmp.13 = 1000;
-        %tmp.14 = true;
-        invoke %tmp.6 %tmp.7(%tmp.12, %tmp.13, %tmp.14);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 39 8 ]
-        symbol [ WatchUi %tmp.15 39 29 36 ];
-        %tmp.15 = getm $.Toybox.WatchUi;
-        symbol [ loadResource %tmp.16 39 37 49 ];
-        %tmp.16 = getv function %tmp.15 :loadResource;
-        symbol [ Rez %tmp.18 39 50 53 ];
-        %tmp.18 = getv ? :Rez;
-        symbol [ Fonts %tmp.19 39 54 59 ];
-        %tmp.19 = getv %tmp.18 :Fonts;
-        symbol [ ds_digital_b_i_s %tmp.20 39 60 76 ];
-        %tmp.20 = getv %tmp.19 :ds_digital_b_i_s;
-        %tmp.21 = invoke %tmp.15 %tmp.16(%tmp.20);
-        symbol [ digital_font_small ? 39 8 26 ];
-        putv self :digital_font_small %tmp.21;
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 40 8 ]
-        symbol [ WatchUi %tmp.22 40 23 30 ];
-        %tmp.22 = getm $.Toybox.WatchUi;
-        symbol [ loadResource %tmp.23 40 31 43 ];
-        %tmp.23 = getv function %tmp.22 :loadResource;
-        symbol [ Rez %tmp.25 40 44 47 ];
-        %tmp.25 = getv ? :Rez;
-        symbol [ Fonts %tmp.26 40 48 53 ];
-        %tmp.26 = getv %tmp.25 :Fonts;
-        symbol [ ds_digital_b_i %tmp.27 40 54 68 ];
-        %tmp.27 = getv %tmp.26 :ds_digital_b_i;
-        %tmp.28 = invoke %tmp.22 %tmp.23(%tmp.27);
-        symbol [ digital_font ? 40 8 20 ];
-        putv self :digital_font %tmp.28;
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 41 8 ]
-        symbol [ View %tmp.30 41 8 12 ];
-        %tmp.30 = getv ? :View;
-        symbol [ onShow %tmp.31 41 13 19 ];
-        %tmp.31 = getv function %tmp.30 :onShow;
-        invoke %tmp.30 %tmp.31();
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_36_30_42_4_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_30_59_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 45 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_30_59_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_30_59_4_stop" ]
+        %info.1 = local;
+        symbol [ info %info.1 45 12 16 ];
+        symbol [ Time %tmp.1 45 19 23 ];
+        %tmp.1 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.2 45 24 33 ];
+        %tmp.2 = getv %tmp.1 :Gregorian;
+        symbol [ info %tmp.3 45 34 38 ];
+        %tmp.3 = getv function %tmp.2 :info;
+        symbol [ Time %tmp.4 45 39 43 ];
+        %tmp.4 = getm $.Toybox.Time;
+        symbol [ now %tmp.5 45 44 47 ];
+        %tmp.5 = getv function %tmp.4 :now;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ Time %tmp.7 45 51 55 ];
+        %tmp.7 = getm $.Toybox.Time;
+        symbol [ FORMAT_MEDIUM %tmp.8 45 56 69 ];
+        %tmp.8 = getv %tmp.7 :FORMAT_MEDIUM;
+        %tmp.9 = invoke %tmp.2 %tmp.3(%tmp.6, %tmp.8);
+        lputv %info.1 %tmp.9;
+        symbol [ info %info.1 45 12 16 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 46 8 ]
+        %tmp.10 = lgetv %info.1;
+        symbol [ info %tmp.10 46 19 23 ];
+        symbol [ day_of_week %tmp.11 46 24 35 ];
+        %tmp.11 = getv %tmp.10 :day_of_week;
+        %tmp.12 = "-";
+        %tmp.13 = add %tmp.11 %tmp.12;
+        %tmp.14 = lgetv %info.1;
+        symbol [ info %tmp.14 46 44 48 ];
+        symbol [ day %tmp.15 46 49 52 ];
+        %tmp.15 = getv %tmp.14 :day;
+        symbol [ format %tmp.16 46 53 59 ];
+        %tmp.16 = getv function %tmp.15 :format;
+        %tmp.17 = "%02d";
+        %tmp.18 = invoke %tmp.15 %tmp.16(%tmp.17);
+        %tmp.19 = add %tmp.13 %tmp.18;
+        symbol [ nom_jour ? 46 8 16 ];
+        putv self :nom_jour %tmp.19;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 49 8 ]
+        symbol [ Timer %tmp.22 49 28 33 ];
+        %tmp.22 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.23 49 34 39 ];
+        %tmp.23 = getv function ? %tmp.22 :Timer;
+        %tmp.20 = newc %tmp.23 ();
+        symbol [ mWeatherTimer ? 49 8 21 ];
+        putv self :mWeatherTimer %tmp.20;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 50 8 ]
+        symbol [ mWeatherTimer %tmp.25 50 8 21 ];
+        %tmp.25 = getv ? :mWeatherTimer;
+        symbol [ start %tmp.26 50 22 27 ];
+        %tmp.26 = getv function %tmp.25 :start;
+        %tmp.27 = self;
+        symbol [ method %tmp.28 50 28 34 ];
+        %tmp.28 = getv function %tmp.27 :method;
+        %tmp.30 = const :updateWeather;
+        symbol [ updateWeather %tmp.30 50 36 49 const ];
+        %tmp.31 = invoke %tmp.27 %tmp.28(%tmp.30);
+        %tmp.32 = 900000;
+        %tmp.33 = true;
+        invoke %tmp.25 %tmp.26(%tmp.31, %tmp.32, %tmp.33);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 52 8 ]
+        %tmp.34 = self;
+        symbol [ updateWeather %tmp.35 52 8 21 ];
+        %tmp.35 = getv function %tmp.34 :updateWeather;
+        invoke %tmp.34 %tmp.35();
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 54 8 ]
+        symbol [ WatchUi %tmp.36 54 29 36 ];
+        %tmp.36 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.37 54 37 49 ];
+        %tmp.37 = getv function %tmp.36 :loadResource;
+        symbol [ Rez %tmp.39 54 50 53 ];
+        %tmp.39 = getv ? :Rez;
+        symbol [ Fonts %tmp.40 54 54 59 ];
+        %tmp.40 = getv %tmp.39 :Fonts;
+        symbol [ ds_digital_b_i_s %tmp.41 54 60 76 ];
+        %tmp.41 = getv %tmp.40 :ds_digital_b_i_s;
+        %tmp.42 = invoke %tmp.36 %tmp.37(%tmp.41);
+        symbol [ digital_font_small ? 54 8 26 ];
+        putv self :digital_font_small %tmp.42;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 55 8 ]
+        symbol [ WatchUi %tmp.43 55 23 30 ];
+        %tmp.43 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.44 55 31 43 ];
+        %tmp.44 = getv function %tmp.43 :loadResource;
+        symbol [ Rez %tmp.46 55 44 47 ];
+        %tmp.46 = getv ? :Rez;
+        symbol [ Fonts %tmp.47 55 48 53 ];
+        %tmp.47 = getv %tmp.46 :Fonts;
+        symbol [ ds_digital_b_i %tmp.48 55 54 68 ];
+        %tmp.48 = getv %tmp.47 :ds_digital_b_i;
+        %tmp.49 = invoke %tmp.43 %tmp.44(%tmp.48);
+        symbol [ digital_font ? 55 8 20 ];
+        putv self :digital_font %tmp.49;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 56 8 ]
+        symbol [ WatchUi %tmp.50 56 20 27 ];
+        %tmp.50 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.51 56 28 40 ];
+        %tmp.51 = getv function %tmp.50 :loadResource;
+        symbol [ Rez %tmp.53 56 41 44 ];
+        %tmp.53 = getv ? :Rez;
+        symbol [ Fonts %tmp.54 56 45 50 ];
+        %tmp.54 = getv %tmp.53 :Fonts;
+        symbol [ font_date %tmp.55 56 51 60 ];
+        %tmp.55 = getv %tmp.54 :font_date;
+        %tmp.56 = invoke %tmp.50 %tmp.51(%tmp.55);
+        symbol [ font_date ? 56 8 17 ];
+        putv self :font_date %tmp.56;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 57 8 ]
+        symbol [ WatchUi %tmp.57 57 23 30 ];
+        %tmp.57 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.58 57 31 43 ];
+        %tmp.58 = getv function %tmp.57 :loadResource;
+        symbol [ Rez %tmp.60 57 44 47 ];
+        %tmp.60 = getv ? :Rez;
+        symbol [ Fonts %tmp.61 57 48 53 ];
+        %tmp.61 = getv %tmp.60 :Fonts;
+        symbol [ font_weather %tmp.62 57 54 66 ];
+        %tmp.62 = getv %tmp.61 :font_weather;
+        %tmp.63 = invoke %tmp.57 %tmp.58(%tmp.62);
+        symbol [ font_weather ? 57 8 20 ];
+        putv self :font_weather %tmp.63;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 58 8 ]
+        symbol [ View %tmp.65 58 8 12 ];
+        %tmp.65 = getv ? :View;
+        symbol [ onShow %tmp.66 58 13 19 ];
+        %tmp.66 = getv function %tmp.65 :onShow;
+        invoke %tmp.65 %tmp.66();
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_30_59_4_stop:
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 44; @symbol_functiondef = [onUpdate,44,13,21]; @symbol_param<0> = [dc,44,22,24]; @symbol_param<0>_type<0> = [Dc,44,28,30]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 61; @symbol_functiondef = [onUpdate,61,13,21]; @symbol_param<0> = [dc,61,22,24]; @symbol_param<0>_type<0> = [Dc,61,28,30]; ]
     function onUpdate(dc as Dc) as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 47 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 64 8 ]
         %tmp.1 = lgetv %dc;
-        symbol [ dc %tmp.1 47 8 10 ];
-        symbol [ clear %tmp.2 47 11 16 ];
+        symbol [ dc %tmp.1 64 8 10 ];
+        symbol [ clear %tmp.2 64 11 16 ];
         %tmp.2 = getv function %tmp.1 :clear;
         invoke %tmp.1 %tmp.2();
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 48 8 ]
-        symbol [ bitmap %tmp.4 48 8 14 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 65 8 ]
+        symbol [ bitmap %tmp.4 65 8 14 ];
         %tmp.4 = getv ? :bitmap;
-        symbol [ draw %tmp.5 48 15 19 ];
+        symbol [ draw %tmp.5 65 15 19 ];
         %tmp.5 = getv function %tmp.4 :draw;
         %tmp.6 = lgetv %dc;
-        symbol [ dc %tmp.6 48 20 22 ];
+        symbol [ dc %tmp.6 65 20 22 ];
         invoke %tmp.4 %tmp.5(%tmp.6);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 50 8 ]
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 67 8 ]
         %tmp.7 = self;
-        symbol [ setupDigit %tmp.8 50 8 18 ];
+        symbol [ setupDigit %tmp.8 67 8 18 ];
         %tmp.8 = getv function %tmp.7 :setupDigit;
         %tmp.9 = "_HourLabel";
-        symbol [ digital_font %tmp.11 50 33 45 ];
+        symbol [ digital_font %tmp.11 67 33 45 ];
         %tmp.11 = getv ? :digital_font;
         %tmp.12 = "8";
         invoke %tmp.7 %tmp.8(%tmp.9, %tmp.11, %tmp.12);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 51 8 ]
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 68 8 ]
         %tmp.13 = self;
-        symbol [ setupDigit %tmp.14 51 8 18 ];
+        symbol [ setupDigit %tmp.14 68 8 18 ];
         %tmp.14 = getv function %tmp.13 :setupDigit;
         %tmp.15 = "_HourLabel2";
-        symbol [ digital_font %tmp.17 51 34 46 ];
+        symbol [ digital_font %tmp.17 68 34 46 ];
         %tmp.17 = getv ? :digital_font;
         %tmp.18 = "8";
         invoke %tmp.13 %tmp.14(%tmp.15, %tmp.17, %tmp.18);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 52 8 ]
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 69 8 ]
         %tmp.19 = self;
-        symbol [ setupDigit %tmp.20 52 8 18 ];
+        symbol [ setupDigit %tmp.20 69 8 18 ];
         %tmp.20 = getv function %tmp.19 :setupDigit;
         %tmp.21 = "_MinuteLabel";
-        symbol [ digital_font %tmp.23 52 35 47 ];
+        symbol [ digital_font %tmp.23 69 35 47 ];
         %tmp.23 = getv ? :digital_font;
         %tmp.24 = "8";
         invoke %tmp.19 %tmp.20(%tmp.21, %tmp.23, %tmp.24);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 53 8 ]
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 70 8 ]
         %tmp.25 = self;
-        symbol [ setupDigit %tmp.26 53 8 18 ];
+        symbol [ setupDigit %tmp.26 70 8 18 ];
         %tmp.26 = getv function %tmp.25 :setupDigit;
         %tmp.27 = "_MinuteLabel2";
-        symbol [ digital_font %tmp.29 53 36 48 ];
+        symbol [ digital_font %tmp.29 70 36 48 ];
         %tmp.29 = getv ? :digital_font;
         %tmp.30 = "8";
         invoke %tmp.25 %tmp.26(%tmp.27, %tmp.29, %tmp.30);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 54 8 ]
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 71 8 ]
         %tmp.31 = self;
-        symbol [ setupDigit %tmp.32 54 8 18 ];
+        symbol [ setupDigit %tmp.32 71 8 18 ];
         %tmp.32 = getv function %tmp.31 :setupDigit;
         %tmp.33 = "_SecondLabel";
-        symbol [ digital_font_small %tmp.35 54 35 53 ];
+        symbol [ digital_font_small %tmp.35 71 35 53 ];
         %tmp.35 = getv ? :digital_font_small;
         %tmp.36 = "8";
         invoke %tmp.31 %tmp.32(%tmp.33, %tmp.35, %tmp.36);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 55 8 ]
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 72 8 ]
         %tmp.37 = self;
-        symbol [ setupDigit %tmp.38 55 8 18 ];
+        symbol [ setupDigit %tmp.38 72 8 18 ];
         %tmp.38 = getv function %tmp.37 :setupDigit;
         %tmp.39 = "_SecondLabel2";
-        symbol [ digital_font_small %tmp.41 55 36 54 ];
+        symbol [ digital_font_small %tmp.41 72 36 54 ];
         %tmp.41 = getv ? :digital_font_small;
         %tmp.42 = "8";
         invoke %tmp.37 %tmp.38(%tmp.39, %tmp.41, %tmp.42);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 63 8 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_stop" ]
-        %clockTime.1 = local;
-        symbol [ clockTime %clockTime.1 63 12 21 ];
-        symbol [ System %tmp.43 63 24 30 ];
-        %tmp.43 = getm $.Toybox.System;
-        symbol [ getClockTime %tmp.44 63 31 43 ];
-        %tmp.44 = getv function %tmp.43 :getClockTime;
-        %tmp.45 = invoke %tmp.43 %tmp.44();
-        lputv %clockTime.1 %tmp.45;
-        symbol [ clockTime %clockTime.1 63 12 21 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 66 8 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_stop" ]
-        %hourString.2 = local;
-        symbol [ hourString %hourString.2 66 12 22 ];
-        %tmp.46 = lgetv %clockTime.1;
-        symbol [ clockTime %tmp.46 66 25 34 ];
-        symbol [ hour %tmp.47 66 35 39 ];
-        %tmp.47 = getv %tmp.46 :hour;
-        symbol [ format %tmp.48 66 40 46 ];
-        %tmp.48 = getv function %tmp.47 :format;
-        %tmp.49 = "%02d";
-        %tmp.50 = invoke %tmp.47 %tmp.48(%tmp.49);
-        lputv %hourString.2 %tmp.50;
-        symbol [ hourString %hourString.2 66 12 22 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 67 8 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_stop" ]
-        %minuteString.3 = local;
-        symbol [ minuteString %minuteString.3 67 12 24 ];
-        %tmp.51 = lgetv %clockTime.1;
-        symbol [ clockTime %tmp.51 67 27 36 ];
-        symbol [ min %tmp.52 67 37 40 ];
-        %tmp.52 = getv %tmp.51 :min;
-        symbol [ format %tmp.53 67 41 47 ];
-        %tmp.53 = getv function %tmp.52 :format;
-        %tmp.54 = "%02d";
-        %tmp.55 = invoke %tmp.52 %tmp.53(%tmp.54);
-        lputv %minuteString.3 %tmp.55;
-        symbol [ minuteString %minuteString.3 67 12 24 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 68 8 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_stop" ]
-        %secondString.4 = local;
-        symbol [ secondString %secondString.4 68 12 24 ];
-        %tmp.56 = lgetv %clockTime.1;
-        symbol [ clockTime %tmp.56 68 27 36 ];
-        symbol [ sec %tmp.57 68 37 40 ];
-        %tmp.57 = getv %tmp.56 :sec;
-        symbol [ format %tmp.58 68 41 47 ];
-        %tmp.58 = getv function %tmp.57 :format;
-        %tmp.59 = "%02d";
-        %tmp.60 = invoke %tmp.57 %tmp.58(%tmp.59);
-        lputv %secondString.4 %tmp.60;
-        symbol [ secondString %secondString.4 68 12 24 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 71 8 ]
-        %tmp.61 = self;
-        symbol [ setupDigit %tmp.62 71 8 18 ];
-        %tmp.62 = getv function %tmp.61 :setupDigit;
-        %tmp.63 = "HourLabel";
-        symbol [ digital_font %tmp.65 71 32 44 ];
-        %tmp.65 = getv ? :digital_font;
-        %tmp.66 = lgetv %hourString.2;
-        symbol [ hourString %tmp.66 71 46 56 ];
-        symbol [ substring %tmp.67 71 57 66 ];
-        %tmp.67 = getv function %tmp.66 :substring;
-        %tmp.68 = 0;
-        %tmp.69 = 1;
-        %tmp.70 = invoke %tmp.66 %tmp.67(%tmp.68, %tmp.69);
-        invoke %tmp.61 %tmp.62(%tmp.63, %tmp.65, %tmp.70);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 72 8 ]
-        %tmp.71 = self;
-        symbol [ setupDigit %tmp.72 72 8 18 ];
-        %tmp.72 = getv function %tmp.71 :setupDigit;
-        %tmp.73 = "HourLabel2";
-        symbol [ digital_font %tmp.75 72 33 45 ];
-        %tmp.75 = getv ? :digital_font;
-        %tmp.76 = lgetv %hourString.2;
-        symbol [ hourString %tmp.76 72 47 57 ];
-        symbol [ substring %tmp.77 72 58 67 ];
-        %tmp.77 = getv function %tmp.76 :substring;
-        %tmp.78 = 1;
-        %tmp.79 = 2;
-        %tmp.80 = invoke %tmp.76 %tmp.77(%tmp.78, %tmp.79);
-        invoke %tmp.71 %tmp.72(%tmp.73, %tmp.75, %tmp.80);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 73 8 ]
-        %tmp.81 = self;
-        symbol [ setupDigit %tmp.82 73 8 18 ];
-        %tmp.82 = getv function %tmp.81 :setupDigit;
-        %tmp.83 = "MinuteLabel";
-        symbol [ digital_font %tmp.85 73 34 46 ];
-        %tmp.85 = getv ? :digital_font;
-        %tmp.86 = lgetv %minuteString.3;
-        symbol [ minuteString %tmp.86 73 48 60 ];
-        symbol [ substring %tmp.87 73 61 70 ];
-        %tmp.87 = getv function %tmp.86 :substring;
-        %tmp.88 = 0;
-        %tmp.89 = 1;
-        %tmp.90 = invoke %tmp.86 %tmp.87(%tmp.88, %tmp.89);
-        invoke %tmp.81 %tmp.82(%tmp.83, %tmp.85, %tmp.90);
 [ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 74 8 ]
-        %tmp.91 = self;
-        symbol [ setupDigit %tmp.92 74 8 18 ];
-        %tmp.92 = getv function %tmp.91 :setupDigit;
-        %tmp.93 = "MinuteLabel2";
-        symbol [ digital_font %tmp.95 74 35 47 ];
-        %tmp.95 = getv ? :digital_font;
-        %tmp.96 = lgetv %minuteString.3;
-        symbol [ minuteString %tmp.96 74 49 61 ];
-        symbol [ substring %tmp.97 74 62 71 ];
-        %tmp.97 = getv function %tmp.96 :substring;
-        %tmp.98 = 1;
-        %tmp.99 = 2;
-        %tmp.100 = invoke %tmp.96 %tmp.97(%tmp.98, %tmp.99);
-        invoke %tmp.91 %tmp.92(%tmp.93, %tmp.95, %tmp.100);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 77 8 ]
-        %tmp.101 = self;
-        symbol [ setupDigit %tmp.102 77 8 18 ];
-        %tmp.102 = getv function %tmp.101 :setupDigit;
-        %tmp.103 = "SecondLabel";
-        symbol [ digital_font_small %tmp.105 77 34 52 ];
-        %tmp.105 = getv ? :digital_font_small;
-        %tmp.106 = lgetv %secondString.4;
-        symbol [ secondString %tmp.106 77 54 66 ];
-        symbol [ substring %tmp.107 77 67 76 ];
-        %tmp.107 = getv function %tmp.106 :substring;
-        %tmp.108 = 0;
-        %tmp.109 = 1;
-        %tmp.110 = invoke %tmp.106 %tmp.107(%tmp.108, %tmp.109);
-        invoke %tmp.101 %tmp.102(%tmp.103, %tmp.105, %tmp.110);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 78 8 ]
-        %tmp.111 = self;
-        symbol [ setupDigit %tmp.112 78 8 18 ];
-        %tmp.112 = getv function %tmp.111 :setupDigit;
-        %tmp.113 = "SecondLabel2";
-        symbol [ digital_font_small %tmp.115 78 35 53 ];
-        %tmp.115 = getv ? :digital_font_small;
-        %tmp.116 = lgetv %secondString.4;
-        symbol [ secondString %tmp.116 78 55 67 ];
-        symbol [ substring %tmp.117 78 68 77 ];
-        %tmp.117 = getv function %tmp.116 :substring;
-        %tmp.118 = 1;
-        %tmp.119 = 2;
-        %tmp.120 = invoke %tmp.116 %tmp.117(%tmp.118, %tmp.119);
-        invoke %tmp.111 %tmp.112(%tmp.113, %tmp.115, %tmp.120);
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %dayNameDrawable.1 = local;
+        symbol [ dayNameDrawable %dayNameDrawable.1 74 12 27 ];
+        symbol [ View %tmp.44 74 30 34 ];
+        %tmp.44 = getv ? :View;
+        symbol [ findDrawableById %tmp.45 74 35 51 ];
+        %tmp.45 = getv function %tmp.44 :findDrawableById;
+        %tmp.46 = "DayNameLabel";
+        %tmp.47 = invoke %tmp.44 %tmp.45(%tmp.46);
+        %tmp.48 = as %tmp.47 Text;
+        symbol [ Text %tmp.48 74 71 75 ];
+        lputv %dayNameDrawable.1 %tmp.48;
+        symbol [ dayNameDrawable %dayNameDrawable.1 74 12 27 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 75 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_75_8_78_8_if_stmt:
+        %tmp.49 = lgetv %dayNameDrawable.1;
+        symbol [ dayNameDrawable %tmp.49 75 12 27 ];
+        %tmp.50 = null;
+        %tmp.51 = ne %tmp.49 %tmp.50;
+        bf %tmp.51 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_75_8_78_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_75_8_78_8_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_75_37_78_8_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 76 12 ]
+        %tmp.52 = lgetv %dayNameDrawable.1;
+        symbol [ dayNameDrawable %tmp.52 76 12 27 ];
+        %tmp.53 = as %tmp.52 { (!Null) };
+        symbol [ setFont %tmp.54 76 28 35 ];
+        %tmp.54 = getv function %tmp.53 :setFont;
+        symbol [ font_date %tmp.56 76 36 45 ];
+        %tmp.56 = getv ? :font_date;
+        invoke %tmp.53 %tmp.54(%tmp.56);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 77 12 ]
+        %tmp.57 = lgetv %dayNameDrawable.1;
+        symbol [ dayNameDrawable %tmp.57 77 12 27 ];
+        %tmp.58 = as %tmp.57 { (!Null) };
+        symbol [ setText %tmp.59 77 28 35 ];
+        %tmp.59 = getv function %tmp.58 :setText;
+        symbol [ nom_jour %tmp.61 77 36 44 ];
+        %tmp.61 = getv ? :nom_jour;
+        invoke %tmp.58 %tmp.59(%tmp.61);
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_75_37_78_8_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_75_8_78_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_75_8_78_8_if_end:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 80 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %tempDrawable.2 = local;
+        symbol [ tempDrawable %tempDrawable.2 80 12 24 ];
+        symbol [ View %tmp.63 80 27 31 ];
+        %tmp.63 = getv ? :View;
+        symbol [ findDrawableById %tmp.64 80 32 48 ];
+        %tmp.64 = getv function %tmp.63 :findDrawableById;
+        %tmp.65 = "TemperatureLabel";
+        %tmp.66 = invoke %tmp.63 %tmp.64(%tmp.65);
+        %tmp.67 = as %tmp.66 Text;
+        symbol [ Text %tmp.67 80 72 76 ];
+        lputv %tempDrawable.2 %tmp.67;
+        symbol [ tempDrawable %tempDrawable.2 80 12 24 ];
 [ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 81 8 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_stop" ]
-        %colon.5 = local;
-        symbol [ colon %colon.5 81 12 17 ];
-        symbol [ View %tmp.122 81 20 24 ];
-        %tmp.122 = getv ? :View;
-        symbol [ findDrawableById %tmp.123 81 25 41 ];
-        %tmp.123 = getv function %tmp.122 :findDrawableById;
-        %tmp.124 = "ColonLabel";
-        %tmp.125 = invoke %tmp.122 %tmp.123(%tmp.124);
-        %tmp.126 = as %tmp.125 Text;
-        symbol [ Text %tmp.126 81 59 63 ];
-        lputv %colon.5 %tmp.126;
-        symbol [ colon %colon.5 81 12 17 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 82 8 ]
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_82_8_85_8_if_stmt:
-        %tmp.127 = lgetv %colon.5;
-        symbol [ colon %tmp.127 82 12 17 ];
-        %tmp.128 = null;
-        %tmp.129 = ne %tmp.127 %tmp.128;
-        bf %tmp.129 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_82_8_85_8_if_end;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_82_8_85_8_if_true:
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_82_27_85_8_start:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_81_8_84_8_if_stmt:
+        %tmp.68 = lgetv %tempDrawable.2;
+        symbol [ tempDrawable %tmp.68 81 12 24 ];
+        %tmp.69 = null;
+        %tmp.70 = ne %tmp.68 %tmp.69;
+        bf %tmp.70 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_81_8_84_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_81_8_84_8_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_81_34_84_8_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 82 12 ]
+        %tmp.71 = lgetv %tempDrawable.2;
+        symbol [ tempDrawable %tmp.71 82 12 24 ];
+        %tmp.72 = as %tmp.71 { (!Null) };
+        symbol [ setFont %tmp.73 82 25 32 ];
+        %tmp.73 = getv function %tmp.72 :setFont;
+        symbol [ font_date %tmp.75 82 33 42 ];
+        %tmp.75 = getv ? :font_date;
+        invoke %tmp.72 %tmp.73(%tmp.75);
 [ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 83 12 ]
-        %tmp.130 = lgetv %colon.5;
-        symbol [ colon %tmp.130 83 12 17 ];
-        %tmp.131 = as %tmp.130 { (!Null) };
-        symbol [ setFont %tmp.132 83 18 25 ];
-        %tmp.132 = getv function %tmp.131 :setFont;
-        symbol [ digital_font %tmp.134 83 26 38 ];
-        %tmp.134 = getv ? :digital_font;
-        invoke %tmp.131 %tmp.132(%tmp.134);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 84 12 ]
-        %tmp.135 = lgetv %colon.5;
-        symbol [ colon %tmp.135 84 12 17 ];
-        %tmp.136 = as %tmp.135 { (!Null) };
-        symbol [ setText %tmp.137 84 18 25 ];
-        %tmp.137 = getv function %tmp.136 :setText;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_begin:
-        symbol [ _showColon %tmp.139 84 26 36 ];
-        %tmp.139 = getv ? :_showColon;
-        bf %tmp.139 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_else_false;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_true:
-        %tmp.140 = ":";
-        push %tmp.140;
-        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_end;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_else_false:
-        %tmp.141 = " ";
-        push %tmp.141;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_end:
-        %tmp.142 = phi [%tmp.139 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_begin] [%tmp.140 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_true] [%tmp.141 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_else_false] [%tmp.142 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_84_26_84_45_end];
-        invoke %tmp.136 %tmp.137(%tmp.142);
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_82_27_85_8_stop:
-        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_82_8_85_8_if_end;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_82_8_85_8_if_end:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 87 8 ]
-        symbol [ View %tmp.144 87 8 12 ];
-        %tmp.144 = getv ? :View;
-        symbol [ onUpdate %tmp.145 87 13 21 ];
-        %tmp.145 = getv function %tmp.144 :onUpdate;
-        %tmp.146 = lgetv %dc;
-        symbol [ dc %tmp.146 87 22 24 ];
-        invoke %tmp.144 %tmp.145(%tmp.146);
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_44_40_88_4_stop:
-    }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 90; @symbol_functiondef = [onAnimationFinished,90,13,32]; ]
-    function onAnimationFinished() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_90_43_92_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 91 8 ]
-        %tmp.1 = true;
-        symbol [ animationFinished ? 91 8 25 ];
-        putv self :animationFinished %tmp.1;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_90_43_92_4_stop:
-    }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 96; @symbol_functiondef = [onTimer,96,13,20]; ]
-    function onTimer() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_96_31_99_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 97 8 ]
-        symbol [ _showColon %tmp.2 97 22 32 ];
-        %tmp.2 = getv ? :_showColon;
-        %tmp.3 = not %tmp.2;
-        symbol [ _showColon ? 97 8 18 ];
-        putv self :_showColon %tmp.3;
+        %tmp.76 = lgetv %tempDrawable.2;
+        symbol [ tempDrawable %tmp.76 83 12 24 ];
+        %tmp.77 = as %tmp.76 { (!Null) };
+        symbol [ setText %tmp.78 83 25 32 ];
+        %tmp.78 = getv function %tmp.77 :setText;
+        symbol [ temperature %tmp.80 83 33 44 ];
+        %tmp.80 = getv ? :temperature;
+        invoke %tmp.77 %tmp.78(%tmp.80);
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_81_34_84_8_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_81_8_84_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_81_8_84_8_if_end:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 85 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %weatherIconDrawable.3 = local;
+        symbol [ weatherIconDrawable %weatherIconDrawable.3 85 12 31 ];
+        symbol [ View %tmp.82 85 34 38 ];
+        %tmp.82 = getv ? :View;
+        symbol [ findDrawableById %tmp.83 85 39 55 ];
+        %tmp.83 = getv function %tmp.82 :findDrawableById;
+        %tmp.84 = "WeatherIcon";
+        %tmp.85 = invoke %tmp.82 %tmp.83(%tmp.84);
+        %tmp.86 = as %tmp.85 Text;
+        symbol [ Text %tmp.86 85 74 78 ];
+        lputv %weatherIconDrawable.3 %tmp.86;
+        symbol [ weatherIconDrawable %weatherIconDrawable.3 85 12 31 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 86 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_8_89_8_if_stmt:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_12_86_62_begin:
+        %tmp.87 = lgetv %weatherIconDrawable.3;
+        symbol [ weatherIconDrawable %tmp.87 86 12 31 ];
+        %tmp.88 = null;
+        %tmp.89 = ne %tmp.87 %tmp.88;
+        bf %tmp.89 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_8_89_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_43_86_62_true:
+        symbol [ temperatureLogo %tmp.91 86 43 58 ];
+        %tmp.91 = getv ? :temperatureLogo;
+        %tmp.92 = null;
+        %tmp.93 = ne %tmp.91 %tmp.92;
+        push %tmp.93;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_43_86_62_end:
+        %tmp.94 = phi [%tmp.89 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_12_86_62_begin] [%tmp.93 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_43_86_62_true] [%tmp.94 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_43_86_62_end];
+        bf %tmp.94 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_8_89_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_8_89_8_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_68_89_8_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 87 12 ]
+        %tmp.95 = lgetv %weatherIconDrawable.3;
+        symbol [ weatherIconDrawable %tmp.95 87 12 31 ];
+        %tmp.96 = as %tmp.95 { (!Null) };
+        symbol [ setFont %tmp.97 87 32 39 ];
+        %tmp.97 = getv function %tmp.96 :setFont;
+        symbol [ font_weather %tmp.99 87 40 52 ];
+        %tmp.99 = getv ? :font_weather;
+        invoke %tmp.96 %tmp.97(%tmp.99);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 88 12 ]
+        %tmp.100 = lgetv %weatherIconDrawable.3;
+        symbol [ weatherIconDrawable %tmp.100 88 12 31 ];
+        %tmp.101 = as %tmp.100 { (!Null) };
+        symbol [ setText %tmp.102 88 32 39 ];
+        %tmp.102 = getv function %tmp.101 :setText;
+        symbol [ temperatureLogo %tmp.104 88 40 55 ];
+        %tmp.104 = getv ? :temperatureLogo;
+        symbol [ toString %tmp.105 88 56 64 ];
+        %tmp.105 = getv function %tmp.104 :toString;
+        %tmp.106 = invoke %tmp.104 %tmp.105();
+        invoke %tmp.101 %tmp.102(%tmp.106);
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_68_89_8_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_8_89_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_86_8_89_8_if_end:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 95 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %clockTime.4 = local;
+        symbol [ clockTime %clockTime.4 95 12 21 ];
+        symbol [ System %tmp.107 95 24 30 ];
+        %tmp.107 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.108 95 31 43 ];
+        %tmp.108 = getv function %tmp.107 :getClockTime;
+        %tmp.109 = invoke %tmp.107 %tmp.108();
+        lputv %clockTime.4 %tmp.109;
+        symbol [ clockTime %clockTime.4 95 12 21 ];
 [ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 98 8 ]
-        symbol [ WatchUi %tmp.4 98 8 15 ];
-        %tmp.4 = getm $.Toybox.WatchUi;
-        symbol [ requestUpdate %tmp.5 98 16 29 ];
-        %tmp.5 = getv function %tmp.4 :requestUpdate;
-        invoke %tmp.4 %tmp.5();
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_96_31_99_4_stop:
-    }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 104; @symbol_functiondef = [onHide,104,13,19]; ]
-    function onHide() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_104_30_106_4_start:
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %hourString.5 = local;
+        symbol [ hourString %hourString.5 98 12 22 ];
+        %tmp.110 = lgetv %clockTime.4;
+        symbol [ clockTime %tmp.110 98 25 34 ];
+        symbol [ hour %tmp.111 98 35 39 ];
+        %tmp.111 = getv %tmp.110 :hour;
+        symbol [ format %tmp.112 98 40 46 ];
+        %tmp.112 = getv function %tmp.111 :format;
+        %tmp.113 = "%02d";
+        %tmp.114 = invoke %tmp.111 %tmp.112(%tmp.113);
+        lputv %hourString.5 %tmp.114;
+        symbol [ hourString %hourString.5 98 12 22 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 99 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %minuteString.6 = local;
+        symbol [ minuteString %minuteString.6 99 12 24 ];
+        %tmp.115 = lgetv %clockTime.4;
+        symbol [ clockTime %tmp.115 99 27 36 ];
+        symbol [ min %tmp.116 99 37 40 ];
+        %tmp.116 = getv %tmp.115 :min;
+        symbol [ format %tmp.117 99 41 47 ];
+        %tmp.117 = getv function %tmp.116 :format;
+        %tmp.118 = "%02d";
+        %tmp.119 = invoke %tmp.116 %tmp.117(%tmp.118);
+        lputv %minuteString.6 %tmp.119;
+        symbol [ minuteString %minuteString.6 99 12 24 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 100 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %secondString.7 = local;
+        symbol [ secondString %secondString.7 100 12 24 ];
+        %tmp.120 = lgetv %clockTime.4;
+        symbol [ clockTime %tmp.120 100 27 36 ];
+        symbol [ sec %tmp.121 100 37 40 ];
+        %tmp.121 = getv %tmp.120 :sec;
+        symbol [ format %tmp.122 100 41 47 ];
+        %tmp.122 = getv function %tmp.121 :format;
+        %tmp.123 = "%02d";
+        %tmp.124 = invoke %tmp.121 %tmp.122(%tmp.123);
+        lputv %secondString.7 %tmp.124;
+        symbol [ secondString %secondString.7 100 12 24 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 103 8 ]
+        %tmp.125 = self;
+        symbol [ setupDigit %tmp.126 103 8 18 ];
+        %tmp.126 = getv function %tmp.125 :setupDigit;
+        %tmp.127 = "HourLabel";
+        symbol [ digital_font %tmp.129 103 32 44 ];
+        %tmp.129 = getv ? :digital_font;
+        %tmp.130 = lgetv %hourString.5;
+        symbol [ hourString %tmp.130 103 46 56 ];
+        symbol [ substring %tmp.131 103 57 66 ];
+        %tmp.131 = getv function %tmp.130 :substring;
+        %tmp.132 = 0;
+        %tmp.133 = 1;
+        %tmp.134 = invoke %tmp.130 %tmp.131(%tmp.132, %tmp.133);
+        invoke %tmp.125 %tmp.126(%tmp.127, %tmp.129, %tmp.134);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 104 8 ]
+        %tmp.135 = self;
+        symbol [ setupDigit %tmp.136 104 8 18 ];
+        %tmp.136 = getv function %tmp.135 :setupDigit;
+        %tmp.137 = "HourLabel2";
+        symbol [ digital_font %tmp.139 104 33 45 ];
+        %tmp.139 = getv ? :digital_font;
+        %tmp.140 = lgetv %hourString.5;
+        symbol [ hourString %tmp.140 104 47 57 ];
+        symbol [ substring %tmp.141 104 58 67 ];
+        %tmp.141 = getv function %tmp.140 :substring;
+        %tmp.142 = 1;
+        %tmp.143 = 2;
+        %tmp.144 = invoke %tmp.140 %tmp.141(%tmp.142, %tmp.143);
+        invoke %tmp.135 %tmp.136(%tmp.137, %tmp.139, %tmp.144);
 [ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 105 8 ]
-        symbol [ _timer %tmp.2 105 8 14 ];
-        %tmp.2 = getv ? :_timer;
-        symbol [ stop %tmp.3 105 15 19 ];
-        %tmp.3 = getv function %tmp.2 :stop;
-        invoke %tmp.2 %tmp.3();
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_104_30_106_4_stop:
-    }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 109; @symbol_functiondef = [onExitSleep,109,13,24]; ]
-    function onExitSleep() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_109_35_111_4_start:
+        %tmp.145 = self;
+        symbol [ setupDigit %tmp.146 105 8 18 ];
+        %tmp.146 = getv function %tmp.145 :setupDigit;
+        %tmp.147 = "MinuteLabel";
+        symbol [ digital_font %tmp.149 105 34 46 ];
+        %tmp.149 = getv ? :digital_font;
+        %tmp.150 = lgetv %minuteString.6;
+        symbol [ minuteString %tmp.150 105 48 60 ];
+        symbol [ substring %tmp.151 105 61 70 ];
+        %tmp.151 = getv function %tmp.150 :substring;
+        %tmp.152 = 0;
+        %tmp.153 = 1;
+        %tmp.154 = invoke %tmp.150 %tmp.151(%tmp.152, %tmp.153);
+        invoke %tmp.145 %tmp.146(%tmp.147, %tmp.149, %tmp.154);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 106 8 ]
+        %tmp.155 = self;
+        symbol [ setupDigit %tmp.156 106 8 18 ];
+        %tmp.156 = getv function %tmp.155 :setupDigit;
+        %tmp.157 = "MinuteLabel2";
+        symbol [ digital_font %tmp.159 106 35 47 ];
+        %tmp.159 = getv ? :digital_font;
+        %tmp.160 = lgetv %minuteString.6;
+        symbol [ minuteString %tmp.160 106 49 61 ];
+        symbol [ substring %tmp.161 106 62 71 ];
+        %tmp.161 = getv function %tmp.160 :substring;
+        %tmp.162 = 1;
+        %tmp.163 = 2;
+        %tmp.164 = invoke %tmp.160 %tmp.161(%tmp.162, %tmp.163);
+        invoke %tmp.155 %tmp.156(%tmp.157, %tmp.159, %tmp.164);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 109 8 ]
+        %tmp.165 = self;
+        symbol [ setupDigit %tmp.166 109 8 18 ];
+        %tmp.166 = getv function %tmp.165 :setupDigit;
+        %tmp.167 = "SecondLabel";
+        symbol [ digital_font_small %tmp.169 109 34 52 ];
+        %tmp.169 = getv ? :digital_font_small;
+        %tmp.170 = lgetv %secondString.7;
+        symbol [ secondString %tmp.170 109 54 66 ];
+        symbol [ substring %tmp.171 109 67 76 ];
+        %tmp.171 = getv function %tmp.170 :substring;
+        %tmp.172 = 0;
+        %tmp.173 = 1;
+        %tmp.174 = invoke %tmp.170 %tmp.171(%tmp.172, %tmp.173);
+        invoke %tmp.165 %tmp.166(%tmp.167, %tmp.169, %tmp.174);
 [ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 110 8 ]
-        symbol [ _timer %tmp.2 110 8 14 ];
-        %tmp.2 = getv ? :_timer;
-        symbol [ start %tmp.3 110 15 20 ];
-        %tmp.3 = getv function %tmp.2 :start;
-        %tmp.4 = self;
-        symbol [ method %tmp.5 110 21 27 ];
-        %tmp.5 = getv function %tmp.4 :method;
-        %tmp.7 = const :onTimer;
-        symbol [ onTimer %tmp.7 110 29 36 const ];
-        %tmp.8 = invoke %tmp.4 %tmp.5(%tmp.7);
-        %tmp.9 = 500;
-        %tmp.10 = true;
-        invoke %tmp.2 %tmp.3(%tmp.8, %tmp.9, %tmp.10);
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_109_35_111_4_stop:
+        %tmp.175 = self;
+        symbol [ setupDigit %tmp.176 110 8 18 ];
+        %tmp.176 = getv function %tmp.175 :setupDigit;
+        %tmp.177 = "SecondLabel2";
+        symbol [ digital_font_small %tmp.179 110 35 53 ];
+        %tmp.179 = getv ? :digital_font_small;
+        %tmp.180 = lgetv %secondString.7;
+        symbol [ secondString %tmp.180 110 55 67 ];
+        symbol [ substring %tmp.181 110 68 77 ];
+        %tmp.181 = getv function %tmp.180 :substring;
+        %tmp.182 = 1;
+        %tmp.183 = 2;
+        %tmp.184 = invoke %tmp.180 %tmp.181(%tmp.182, %tmp.183);
+        invoke %tmp.175 %tmp.176(%tmp.177, %tmp.179, %tmp.184);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 113 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop" ]
+        %colon.8 = local;
+        symbol [ colon %colon.8 113 12 17 ];
+        symbol [ View %tmp.186 113 20 24 ];
+        %tmp.186 = getv ? :View;
+        symbol [ findDrawableById %tmp.187 113 25 41 ];
+        %tmp.187 = getv function %tmp.186 :findDrawableById;
+        %tmp.188 = "ColonLabel";
+        %tmp.189 = invoke %tmp.186 %tmp.187(%tmp.188);
+        %tmp.190 = as %tmp.189 Text;
+        symbol [ Text %tmp.190 113 59 63 ];
+        lputv %colon.8 %tmp.190;
+        symbol [ colon %colon.8 113 12 17 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 114 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_8_117_8_if_stmt:
+        %tmp.191 = lgetv %colon.8;
+        symbol [ colon %tmp.191 114 12 17 ];
+        %tmp.192 = null;
+        %tmp.193 = ne %tmp.191 %tmp.192;
+        bf %tmp.193 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_8_117_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_8_117_8_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_27_117_8_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 115 12 ]
+        %tmp.194 = lgetv %colon.8;
+        symbol [ colon %tmp.194 115 12 17 ];
+        %tmp.195 = as %tmp.194 { (!Null) };
+        symbol [ setFont %tmp.196 115 18 25 ];
+        %tmp.196 = getv function %tmp.195 :setFont;
+        symbol [ digital_font %tmp.198 115 26 38 ];
+        %tmp.198 = getv ? :digital_font;
+        invoke %tmp.195 %tmp.196(%tmp.198);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 116 12 ]
+        %tmp.199 = lgetv %colon.8;
+        symbol [ colon %tmp.199 116 12 17 ];
+        %tmp.200 = as %tmp.199 { (!Null) };
+        symbol [ setText %tmp.201 116 18 25 ];
+        %tmp.201 = getv function %tmp.200 :setText;
+        %tmp.202 = ":";
+        invoke %tmp.200 %tmp.201(%tmp.202);
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_27_117_8_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_8_117_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_8_117_8_if_end:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 119 8 ]
+        symbol [ View %tmp.204 119 8 12 ];
+        %tmp.204 = getv ? :View;
+        symbol [ onUpdate %tmp.205 119 13 21 ];
+        %tmp.205 = getv function %tmp.204 :onUpdate;
+        %tmp.206 = lgetv %dc;
+        symbol [ dc %tmp.206 119 22 24 ];
+        invoke %tmp.204 %tmp.205(%tmp.206);
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_61_40_120_4_stop:
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 114; @symbol_functiondef = [onEnterSleep,114,13,25]; ]
-    function onEnterSleep() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_36_116_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 115 8 ]
-        symbol [ _timer %tmp.2 115 8 14 ];
-        %tmp.2 = getv ? :_timer;
-        symbol [ stop %tmp.3 115 15 19 ];
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 122; @symbol_functiondef = [getWeatherIcon,122,13,27]; @symbol_return<0> = [Lang,122,33,37]; @symbol_return<1> = [Char,122,38,42]; ]
+    function getWeatherIcon() as Lang.Char {
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_122_43_278_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 124 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_122_43_278_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_122_43_278_4_stop" ]
+        %isNight.1 = local;
+        symbol [ isNight %isNight.1 124 12 19 ];
+        %tmp.1 = self;
+        symbol [ isSunDown %tmp.2 124 22 31 ];
+        %tmp.2 = getv function %tmp.1 :isSunDown;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %isNight.1 %tmp.3;
+        symbol [ isNight %isNight.1 124 12 19 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 125 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_122_43_278_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_122_43_278_4_stop" ]
+        %condition.2 = local;
+        symbol [ condition %condition.2 125 12 21 ];
+        symbol [ Weather %tmp.4 125 24 31 ];
+        %tmp.4 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.5 125 32 52 ];
+        %tmp.5 = getv function %tmp.4 :getCurrentConditions;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ condition %tmp.7 125 55 64 ];
+        %tmp.7 = getv %tmp.6 :condition;
+        lputv %condition.2 %tmp.7;
+        symbol [ condition %condition.2 125 12 21 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 127 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_127_8_129_8_if_stmt:
+        %tmp.8 = lgetv %condition.2;
+        symbol [ condition %tmp.8 127 12 21 ];
+        %tmp.9 = null;
+        %tmp.10 = eq %tmp.8 %tmp.9;
+        bf %tmp.10 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_127_8_129_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_127_8_129_8_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_127_31_129_8_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 128 12 ]
+        %tmp.11 = 61443;
+        symbol [ toChar %tmp.12 128 25 31 ];
+        %tmp.12 = getv function %tmp.11 :toChar;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        ret %tmp.13;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_127_31_129_8_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_127_8_129_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_127_8_129_8_if_end:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 131 8 ]
+        %tmp.14 = lgetv %condition.2;
+        symbol [ condition %tmp.14 131 16 25 ];
+        push %tmp.14;
+        switch %tmp.14 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_131_8_277_8_switchStmtEnd;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_131_8_277_8_switchStmtBegin:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 133 12 ]
+        %tmp.15 = dup %tmp.14;
+        symbol [ Weather %tmp.16 133 17 24 ];
+        %tmp.16 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLEAR %tmp.17 133 25 40 ];
+        %tmp.17 = getv %tmp.16 :CONDITION_CLEAR;
+        %tmp.18 = getv function %tmp.15 :equals;
+        %tmp.19 = invoke %tmp.15 %tmp.18 (%tmp.17);
+        bt %tmp.19 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_133_12_133_40_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 134 12 ]
+        %tmp.20 = dup %tmp.14;
+        symbol [ Weather %tmp.21 134 17 24 ];
+        %tmp.21 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FAIR %tmp.22 134 25 39 ];
+        %tmp.22 = getv %tmp.21 :CONDITION_FAIR;
+        %tmp.23 = getv function %tmp.20 :equals;
+        %tmp.24 = invoke %tmp.20 %tmp.23 (%tmp.22);
+        bt %tmp.24 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_134_12_141_16_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 143 12 ]
+        %tmp.25 = dup %tmp.14;
+        symbol [ Weather %tmp.26 143 17 24 ];
+        %tmp.26 = getm $.Toybox.Weather;
+        symbol [ CONDITION_PARTLY_CLEAR %tmp.27 143 25 47 ];
+        %tmp.27 = getv %tmp.26 :CONDITION_PARTLY_CLEAR;
+        %tmp.28 = getv function %tmp.25 :equals;
+        %tmp.29 = invoke %tmp.25 %tmp.28 (%tmp.27);
+        bt %tmp.29 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_143_12_143_47_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 144 12 ]
+        %tmp.30 = dup %tmp.14;
+        symbol [ Weather %tmp.31 144 17 24 ];
+        %tmp.31 = getm $.Toybox.Weather;
+        symbol [ CONDITION_MOSTLY_CLEAR %tmp.32 144 25 47 ];
+        %tmp.32 = getv %tmp.31 :CONDITION_MOSTLY_CLEAR;
+        %tmp.33 = getv function %tmp.30 :equals;
+        %tmp.34 = invoke %tmp.30 %tmp.33 (%tmp.32);
+        bt %tmp.34 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_144_12_151_16_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 156 12 ]
+        %tmp.35 = dup %tmp.14;
+        symbol [ Weather %tmp.36 156 17 24 ];
+        %tmp.36 = getm $.Toybox.Weather;
+        symbol [ CONDITION_PARTLY_CLOUDY %tmp.37 156 25 48 ];
+        %tmp.37 = getv %tmp.36 :CONDITION_PARTLY_CLOUDY;
+        %tmp.38 = getv function %tmp.35 :equals;
+        %tmp.39 = invoke %tmp.35 %tmp.38 (%tmp.37);
+        bt %tmp.39 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_156_12_156_48_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 157 12 ]
+        %tmp.40 = dup %tmp.14;
+        symbol [ Weather %tmp.41 157 17 24 ];
+        %tmp.41 = getm $.Toybox.Weather;
+        symbol [ CONDITION_MOSTLY_CLOUDY %tmp.42 157 25 48 ];
+        %tmp.42 = getv %tmp.41 :CONDITION_MOSTLY_CLOUDY;
+        %tmp.43 = getv function %tmp.40 :equals;
+        %tmp.44 = invoke %tmp.40 %tmp.43 (%tmp.42);
+        bt %tmp.44 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_157_12_164_16_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 166 12 ]
+        %tmp.45 = dup %tmp.14;
+        symbol [ Weather %tmp.46 166 17 24 ];
+        %tmp.46 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY %tmp.47 166 25 41 ];
+        %tmp.47 = getv %tmp.46 :CONDITION_CLOUDY;
+        %tmp.48 = getv function %tmp.45 :equals;
+        %tmp.49 = invoke %tmp.45 %tmp.48 (%tmp.47);
+        bt %tmp.49 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_166_12_166_41_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 167 12 ]
+        %tmp.50 = dup %tmp.14;
+        symbol [ Weather %tmp.51 167 17 24 ];
+        %tmp.51 = getm $.Toybox.Weather;
+        symbol [ CONDITION_THIN_CLOUDS %tmp.52 167 25 46 ];
+        %tmp.52 = getv %tmp.51 :CONDITION_THIN_CLOUDS;
+        %tmp.53 = getv function %tmp.50 :equals;
+        %tmp.54 = invoke %tmp.50 %tmp.53 (%tmp.52);
+        bt %tmp.54 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_167_12_169_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 172 12 ]
+        %tmp.55 = dup %tmp.14;
+        symbol [ Weather %tmp.56 172 17 24 ];
+        %tmp.56 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN %tmp.57 172 25 39 ];
+        %tmp.57 = getv %tmp.56 :CONDITION_RAIN;
+        %tmp.58 = getv function %tmp.55 :equals;
+        %tmp.59 = invoke %tmp.55 %tmp.58 (%tmp.57);
+        bt %tmp.59 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_172_12_173_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 175 12 ]
+        %tmp.60 = dup %tmp.14;
+        symbol [ Weather %tmp.61 175 17 24 ];
+        %tmp.61 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_RAIN %tmp.62 175 25 45 ];
+        %tmp.62 = getv %tmp.61 :CONDITION_LIGHT_RAIN;
+        %tmp.63 = getv function %tmp.60 :equals;
+        %tmp.64 = invoke %tmp.60 %tmp.63 (%tmp.62);
+        bt %tmp.64 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_175_12_175_45_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 176 12 ]
+        %tmp.65 = dup %tmp.14;
+        symbol [ Weather %tmp.66 176 17 24 ];
+        %tmp.66 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DRIZZLE %tmp.67 176 25 42 ];
+        %tmp.67 = getv %tmp.66 :CONDITION_DRIZZLE;
+        %tmp.68 = getv function %tmp.65 :equals;
+        %tmp.69 = invoke %tmp.65 %tmp.68 (%tmp.67);
+        bt %tmp.69 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_176_12_177_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 179 12 ]
+        %tmp.70 = dup %tmp.14;
+        symbol [ Weather %tmp.71 179 17 24 ];
+        %tmp.71 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_RAIN %tmp.72 179 25 45 ];
+        %tmp.72 = getv %tmp.71 :CONDITION_HEAVY_RAIN;
+        %tmp.73 = getv function %tmp.70 :equals;
+        %tmp.74 = invoke %tmp.70 %tmp.73 (%tmp.72);
+        bt %tmp.74 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_179_12_179_45_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 180 12 ]
+        %tmp.75 = dup %tmp.14;
+        symbol [ Weather %tmp.76 180 17 24 ];
+        %tmp.76 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SHOWERS %tmp.77 180 25 42 ];
+        %tmp.77 = getv %tmp.76 :CONDITION_SHOWERS;
+        %tmp.78 = getv function %tmp.75 :equals;
+        %tmp.79 = invoke %tmp.75 %tmp.78 (%tmp.77);
+        bt %tmp.79 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_180_12_180_42_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 181 12 ]
+        %tmp.80 = dup %tmp.14;
+        symbol [ Weather %tmp.81 181 17 24 ];
+        %tmp.81 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_SHOWERS %tmp.82 181 25 48 ];
+        %tmp.82 = getv %tmp.81 :CONDITION_HEAVY_SHOWERS;
+        %tmp.83 = getv function %tmp.80 :equals;
+        %tmp.84 = invoke %tmp.80 %tmp.83 (%tmp.82);
+        bt %tmp.84 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_181_12_188_16_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 190 12 ]
+        %tmp.85 = dup %tmp.14;
+        symbol [ Weather %tmp.86 190 17 24 ];
+        %tmp.86 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_SHOWERS %tmp.87 190 25 52 ];
+        %tmp.87 = getv %tmp.86 :CONDITION_SCATTERED_SHOWERS;
+        %tmp.88 = getv function %tmp.85 :equals;
+        %tmp.89 = invoke %tmp.85 %tmp.88 (%tmp.87);
+        bt %tmp.89 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_190_12_190_52_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 191 12 ]
+        %tmp.90 = dup %tmp.14;
+        symbol [ Weather %tmp.91 191 17 24 ];
+        %tmp.91 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_SHOWERS %tmp.92 191 25 48 ];
+        %tmp.92 = getv %tmp.91 :CONDITION_LIGHT_SHOWERS;
+        %tmp.93 = getv function %tmp.90 :equals;
+        %tmp.94 = invoke %tmp.90 %tmp.93 (%tmp.92);
+        bt %tmp.94 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_191_12_191_48_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 192 12 ]
+        %tmp.95 = dup %tmp.14;
+        symbol [ Weather %tmp.96 192 17 24 ];
+        %tmp.96 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_SHOWERS %tmp.97 192 25 52 ];
+        %tmp.97 = getv %tmp.96 :CONDITION_CHANCE_OF_SHOWERS;
+        %tmp.98 = getv function %tmp.95 :equals;
+        %tmp.99 = invoke %tmp.95 %tmp.98 (%tmp.97);
+        bt %tmp.99 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_192_12_192_52_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 193 12 ]
+        %tmp.100 = dup %tmp.14;
+        symbol [ Weather %tmp.101 193 17 24 ];
+        %tmp.101 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY_CHANCE_OF_RAIN %tmp.102 193 25 56 ];
+        %tmp.102 = getv %tmp.101 :CONDITION_CLOUDY_CHANCE_OF_RAIN;
+        %tmp.103 = getv function %tmp.100 :equals;
+        %tmp.104 = invoke %tmp.100 %tmp.103 (%tmp.102);
+        bt %tmp.104 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_193_12_200_16_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 203 12 ]
+        %tmp.105 = dup %tmp.14;
+        symbol [ Weather %tmp.106 203 17 24 ];
+        %tmp.106 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SNOW %tmp.107 203 25 39 ];
+        %tmp.107 = getv %tmp.106 :CONDITION_SNOW;
+        %tmp.108 = getv function %tmp.105 :equals;
+        %tmp.109 = invoke %tmp.105 %tmp.108 (%tmp.107);
+        bt %tmp.109 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_203_12_203_39_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 204 12 ]
+        %tmp.110 = dup %tmp.14;
+        symbol [ Weather %tmp.111 204 17 24 ];
+        %tmp.111 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_SNOW %tmp.112 204 25 45 ];
+        %tmp.112 = getv %tmp.111 :CONDITION_LIGHT_SNOW;
+        %tmp.113 = getv function %tmp.110 :equals;
+        %tmp.114 = invoke %tmp.110 %tmp.113 (%tmp.112);
+        bt %tmp.114 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_204_12_204_45_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 205 12 ]
+        %tmp.115 = dup %tmp.14;
+        symbol [ Weather %tmp.116 205 17 24 ];
+        %tmp.116 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FLURRIES %tmp.117 205 25 43 ];
+        %tmp.117 = getv %tmp.116 :CONDITION_FLURRIES;
+        %tmp.118 = getv function %tmp.115 :equals;
+        %tmp.119 = invoke %tmp.115 %tmp.118 (%tmp.117);
+        bt %tmp.119 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_205_12_205_43_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 206 12 ]
+        %tmp.120 = dup %tmp.14;
+        symbol [ Weather %tmp.121 206 17 24 ];
+        %tmp.121 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_SNOW %tmp.122 206 25 49 ];
+        %tmp.122 = getv %tmp.121 :CONDITION_CHANCE_OF_SNOW;
+        %tmp.123 = getv function %tmp.120 :equals;
+        %tmp.124 = invoke %tmp.120 %tmp.123 (%tmp.122);
+        bt %tmp.124 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_206_12_207_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 209 12 ]
+        %tmp.125 = dup %tmp.14;
+        symbol [ Weather %tmp.126 209 17 24 ];
+        %tmp.126 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_SNOW %tmp.127 209 25 45 ];
+        %tmp.127 = getv %tmp.126 :CONDITION_HEAVY_SNOW;
+        %tmp.128 = getv function %tmp.125 :equals;
+        %tmp.129 = invoke %tmp.125 %tmp.128 (%tmp.127);
+        bt %tmp.129 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_209_12_214_16_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 216 12 ]
+        %tmp.130 = dup %tmp.14;
+        symbol [ Weather %tmp.131 216 17 24 ];
+        %tmp.131 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINTRY_MIX %tmp.132 216 25 45 ];
+        %tmp.132 = getv %tmp.131 :CONDITION_WINTRY_MIX;
+        %tmp.133 = getv function %tmp.130 :equals;
+        %tmp.134 = invoke %tmp.130 %tmp.133 (%tmp.132);
+        bt %tmp.134 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_216_12_216_45_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 217 12 ]
+        %tmp.135 = dup %tmp.14;
+        symbol [ Weather %tmp.136 217 17 24 ];
+        %tmp.136 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN_SNOW %tmp.137 217 25 44 ];
+        %tmp.137 = getv %tmp.136 :CONDITION_RAIN_SNOW;
+        %tmp.138 = getv function %tmp.135 :equals;
+        %tmp.139 = invoke %tmp.135 %tmp.138 (%tmp.137);
+        bt %tmp.139 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_217_12_217_44_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 218 12 ]
+        %tmp.140 = dup %tmp.14;
+        symbol [ Weather %tmp.141 218 17 24 ];
+        %tmp.141 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_RAIN_SNOW %tmp.142 218 25 50 ];
+        %tmp.142 = getv %tmp.141 :CONDITION_LIGHT_RAIN_SNOW;
+        %tmp.143 = getv function %tmp.140 :equals;
+        %tmp.144 = invoke %tmp.140 %tmp.143 (%tmp.142);
+        bt %tmp.144 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_218_12_218_50_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 219 12 ]
+        %tmp.145 = dup %tmp.14;
+        symbol [ Weather %tmp.146 219 17 24 ];
+        %tmp.146 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_RAIN_SNOW %tmp.147 219 25 50 ];
+        %tmp.147 = getv %tmp.146 :CONDITION_HEAVY_RAIN_SNOW;
+        %tmp.148 = getv function %tmp.145 :equals;
+        %tmp.149 = invoke %tmp.145 %tmp.148 (%tmp.147);
+        bt %tmp.149 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_219_12_219_50_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 220 12 ]
+        %tmp.150 = dup %tmp.14;
+        symbol [ Weather %tmp.151 220 17 24 ];
+        %tmp.151 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_RAIN_SNOW %tmp.152 220 25 54 ];
+        %tmp.152 = getv %tmp.151 :CONDITION_CHANCE_OF_RAIN_SNOW;
+        %tmp.153 = getv function %tmp.150 :equals;
+        %tmp.154 = invoke %tmp.150 %tmp.153 (%tmp.152);
+        bt %tmp.154 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_220_12_220_54_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 221 12 ]
+        %tmp.155 = dup %tmp.14;
+        symbol [ Weather %tmp.156 221 17 24 ];
+        %tmp.156 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY_CHANCE_OF_RAIN_SNOW %tmp.157 221 25 61 ];
+        %tmp.157 = getv %tmp.156 :CONDITION_CLOUDY_CHANCE_OF_RAIN_SNOW;
+        %tmp.158 = getv function %tmp.155 :equals;
+        %tmp.159 = invoke %tmp.155 %tmp.158 (%tmp.157);
+        bt %tmp.159 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_221_12_221_61_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 222 12 ]
+        %tmp.160 = dup %tmp.14;
+        symbol [ Weather %tmp.161 222 17 24 ];
+        %tmp.161 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SLEET %tmp.162 222 25 40 ];
+        %tmp.162 = getv %tmp.161 :CONDITION_SLEET;
+        %tmp.163 = getv function %tmp.160 :equals;
+        %tmp.164 = invoke %tmp.160 %tmp.163 (%tmp.162);
+        bt %tmp.164 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_222_12_223_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 225 12 ]
+        %tmp.165 = dup %tmp.14;
+        symbol [ Weather %tmp.166 225 17 24 ];
+        %tmp.166 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FREEZING_RAIN %tmp.167 225 25 48 ];
+        %tmp.167 = getv %tmp.166 :CONDITION_FREEZING_RAIN;
+        %tmp.168 = getv function %tmp.165 :equals;
+        %tmp.169 = invoke %tmp.165 %tmp.168 (%tmp.167);
+        bt %tmp.169 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_225_12_225_48_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 226 12 ]
+        %tmp.170 = dup %tmp.14;
+        symbol [ Weather %tmp.171 226 17 24 ];
+        %tmp.171 = getm $.Toybox.Weather;
+        symbol [ CONDITION_ICE %tmp.172 226 25 38 ];
+        %tmp.172 = getv %tmp.171 :CONDITION_ICE;
+        %tmp.173 = getv function %tmp.170 :equals;
+        %tmp.174 = invoke %tmp.170 %tmp.173 (%tmp.172);
+        bt %tmp.174 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_226_12_226_38_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 227 12 ]
+        %tmp.175 = dup %tmp.14;
+        symbol [ Weather %tmp.176 227 17 24 ];
+        %tmp.176 = getm $.Toybox.Weather;
+        symbol [ CONDITION_ICE_SNOW %tmp.177 227 25 43 ];
+        %tmp.177 = getv %tmp.176 :CONDITION_ICE_SNOW;
+        %tmp.178 = getv function %tmp.175 :equals;
+        %tmp.179 = invoke %tmp.175 %tmp.178 (%tmp.177);
+        bt %tmp.179 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_227_12_228_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 230 12 ]
+        %tmp.180 = dup %tmp.14;
+        symbol [ Weather %tmp.181 230 17 24 ];
+        %tmp.181 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY_CHANCE_OF_SNOW %tmp.182 230 25 56 ];
+        %tmp.182 = getv %tmp.181 :CONDITION_CLOUDY_CHANCE_OF_SNOW;
+        %tmp.183 = getv function %tmp.180 :equals;
+        %tmp.184 = invoke %tmp.180 %tmp.183 (%tmp.182);
+        bt %tmp.184 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_230_12_235_16_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 238 12 ]
+        %tmp.185 = dup %tmp.14;
+        symbol [ Weather %tmp.186 238 17 24 ];
+        %tmp.186 = getm $.Toybox.Weather;
+        symbol [ CONDITION_THUNDERSTORMS %tmp.187 238 25 48 ];
+        %tmp.187 = getv %tmp.186 :CONDITION_THUNDERSTORMS;
+        %tmp.188 = getv function %tmp.185 :equals;
+        %tmp.189 = invoke %tmp.185 %tmp.188 (%tmp.187);
+        bt %tmp.189 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_238_12_238_48_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 239 12 ]
+        %tmp.190 = dup %tmp.14;
+        symbol [ Weather %tmp.191 239 17 24 ];
+        %tmp.191 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_THUNDERSTORMS %tmp.192 239 25 58 ];
+        %tmp.192 = getv %tmp.191 :CONDITION_SCATTERED_THUNDERSTORMS;
+        %tmp.193 = getv function %tmp.190 :equals;
+        %tmp.194 = invoke %tmp.190 %tmp.193 (%tmp.192);
+        bt %tmp.194 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_239_12_239_58_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 240 12 ]
+        %tmp.195 = dup %tmp.14;
+        symbol [ Weather %tmp.196 240 17 24 ];
+        %tmp.196 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_THUNDERSTORMS %tmp.197 240 25 58 ];
+        %tmp.197 = getv %tmp.196 :CONDITION_CHANCE_OF_THUNDERSTORMS;
+        %tmp.198 = getv function %tmp.195 :equals;
+        %tmp.199 = invoke %tmp.195 %tmp.198 (%tmp.197);
+        bt %tmp.199 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_240_12_241_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 243 12 ]
+        %tmp.200 = dup %tmp.14;
+        symbol [ Weather %tmp.201 243 17 24 ];
+        %tmp.201 = getm $.Toybox.Weather;
+        symbol [ CONDITION_TORNADO %tmp.202 243 25 42 ];
+        %tmp.202 = getv %tmp.201 :CONDITION_TORNADO;
+        %tmp.203 = getv function %tmp.200 :equals;
+        %tmp.204 = invoke %tmp.200 %tmp.203 (%tmp.202);
+        bt %tmp.204 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_243_12_244_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 246 12 ]
+        %tmp.205 = dup %tmp.14;
+        symbol [ Weather %tmp.206 246 17 24 ];
+        %tmp.206 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HURRICANE %tmp.207 246 25 44 ];
+        %tmp.207 = getv %tmp.206 :CONDITION_HURRICANE;
+        %tmp.208 = getv function %tmp.205 :equals;
+        %tmp.209 = invoke %tmp.205 %tmp.208 (%tmp.207);
+        bt %tmp.209 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_246_12_246_44_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 247 12 ]
+        %tmp.210 = dup %tmp.14;
+        symbol [ Weather %tmp.211 247 17 24 ];
+        %tmp.211 = getm $.Toybox.Weather;
+        symbol [ CONDITION_TROPICAL_STORM %tmp.212 247 25 49 ];
+        %tmp.212 = getv %tmp.211 :CONDITION_TROPICAL_STORM;
+        %tmp.213 = getv function %tmp.210 :equals;
+        %tmp.214 = invoke %tmp.210 %tmp.213 (%tmp.212);
+        bt %tmp.214 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_247_12_248_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 250 12 ]
+        %tmp.215 = dup %tmp.14;
+        symbol [ Weather %tmp.216 250 17 24 ];
+        %tmp.216 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FOG %tmp.217 250 25 38 ];
+        %tmp.217 = getv %tmp.216 :CONDITION_FOG;
+        %tmp.218 = getv function %tmp.215 :equals;
+        %tmp.219 = invoke %tmp.215 %tmp.218 (%tmp.217);
+        bt %tmp.219 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_250_12_250_38_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 251 12 ]
+        %tmp.220 = dup %tmp.14;
+        symbol [ Weather %tmp.221 251 17 24 ];
+        %tmp.221 = getm $.Toybox.Weather;
+        symbol [ CONDITION_MIST %tmp.222 251 25 39 ];
+        %tmp.222 = getv %tmp.221 :CONDITION_MIST;
+        %tmp.223 = getv function %tmp.220 :equals;
+        %tmp.224 = invoke %tmp.220 %tmp.223 (%tmp.222);
+        bt %tmp.224 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_251_12_252_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 254 12 ]
+        %tmp.225 = dup %tmp.14;
+        symbol [ Weather %tmp.226 254 17 24 ];
+        %tmp.226 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAZY %tmp.227 254 25 39 ];
+        %tmp.227 = getv %tmp.226 :CONDITION_HAZY;
+        %tmp.228 = getv function %tmp.225 :equals;
+        %tmp.229 = invoke %tmp.225 %tmp.228 (%tmp.227);
+        bt %tmp.229 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_254_12_254_39_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 255 12 ]
+        %tmp.230 = dup %tmp.14;
+        symbol [ Weather %tmp.231 255 17 24 ];
+        %tmp.231 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAZE %tmp.232 255 25 39 ];
+        %tmp.232 = getv %tmp.231 :CONDITION_HAZE;
+        %tmp.233 = getv function %tmp.230 :equals;
+        %tmp.234 = invoke %tmp.230 %tmp.233 (%tmp.232);
+        bt %tmp.234 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_255_12_255_39_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 256 12 ]
+        %tmp.235 = dup %tmp.14;
+        symbol [ Weather %tmp.236 256 17 24 ];
+        %tmp.236 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SMOKE %tmp.237 256 25 40 ];
+        %tmp.237 = getv %tmp.236 :CONDITION_SMOKE;
+        %tmp.238 = getv function %tmp.235 :equals;
+        %tmp.239 = invoke %tmp.235 %tmp.238 (%tmp.237);
+        bt %tmp.239 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_256_12_257_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 259 12 ]
+        %tmp.240 = dup %tmp.14;
+        symbol [ Weather %tmp.241 259 17 24 ];
+        %tmp.241 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINDY %tmp.242 259 25 40 ];
+        %tmp.242 = getv %tmp.241 :CONDITION_WINDY;
+        %tmp.243 = getv function %tmp.240 :equals;
+        %tmp.244 = invoke %tmp.240 %tmp.243 (%tmp.242);
+        bt %tmp.244 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_259_12_259_40_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 260 12 ]
+        %tmp.245 = dup %tmp.14;
+        symbol [ Weather %tmp.246 260 17 24 ];
+        %tmp.246 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SQUALL %tmp.247 260 25 41 ];
+        %tmp.247 = getv %tmp.246 :CONDITION_SQUALL;
+        %tmp.248 = getv function %tmp.245 :equals;
+        %tmp.249 = invoke %tmp.245 %tmp.248 (%tmp.247);
+        bt %tmp.249 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_260_12_261_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 263 12 ]
+        %tmp.250 = dup %tmp.14;
+        symbol [ Weather %tmp.251 263 17 24 ];
+        %tmp.251 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DUST %tmp.252 263 25 39 ];
+        %tmp.252 = getv %tmp.251 :CONDITION_DUST;
+        %tmp.253 = getv function %tmp.250 :equals;
+        %tmp.254 = invoke %tmp.250 %tmp.253 (%tmp.252);
+        bt %tmp.254 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_263_12_263_39_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 264 12 ]
+        %tmp.255 = dup %tmp.14;
+        symbol [ Weather %tmp.256 264 17 24 ];
+        %tmp.256 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SAND %tmp.257 264 25 39 ];
+        %tmp.257 = getv %tmp.256 :CONDITION_SAND;
+        %tmp.258 = getv function %tmp.255 :equals;
+        %tmp.259 = invoke %tmp.255 %tmp.258 (%tmp.257);
+        bt %tmp.259 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_264_12_264_39_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 265 12 ]
+        %tmp.260 = dup %tmp.14;
+        symbol [ Weather %tmp.261 265 17 24 ];
+        %tmp.261 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SANDSTORM %tmp.262 265 25 44 ];
+        %tmp.262 = getv %tmp.261 :CONDITION_SANDSTORM;
+        %tmp.263 = getv function %tmp.260 :equals;
+        %tmp.264 = invoke %tmp.260 %tmp.263 (%tmp.262);
+        bt %tmp.264 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_265_12_265_44_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 266 12 ]
+        %tmp.265 = dup %tmp.14;
+        symbol [ Weather %tmp.266 266 17 24 ];
+        %tmp.266 = getm $.Toybox.Weather;
+        symbol [ CONDITION_VOLCANIC_ASH %tmp.267 266 25 47 ];
+        %tmp.267 = getv %tmp.266 :CONDITION_VOLCANIC_ASH;
+        %tmp.268 = getv function %tmp.265 :equals;
+        %tmp.269 = invoke %tmp.265 %tmp.268 (%tmp.267);
+        bt %tmp.269 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_266_12_267_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 269 12 ]
+        %tmp.270 = dup %tmp.14;
+        symbol [ Weather %tmp.271 269 17 24 ];
+        %tmp.271 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAIL %tmp.272 269 25 39 ];
+        %tmp.272 = getv %tmp.271 :CONDITION_HAIL;
+        %tmp.273 = getv function %tmp.270 :equals;
+        %tmp.274 = invoke %tmp.270 %tmp.273 (%tmp.272);
+        bt %tmp.274 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_269_12_270_37_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 273 12 ]
+        %tmp.275 = dup %tmp.14;
+        symbol [ Weather %tmp.276 273 17 24 ];
+        %tmp.276 = getm $.Toybox.Weather;
+        symbol [ CONDITION_UNKNOWN_PRECIPITATION %tmp.277 273 25 56 ];
+        %tmp.277 = getv %tmp.276 :CONDITION_UNKNOWN_PRECIPITATION;
+        %tmp.278 = getv function %tmp.275 :equals;
+        %tmp.279 = invoke %tmp.275 %tmp.278 (%tmp.277);
+        bt %tmp.279 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_273_12_273_56_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 274 12 ]
+        %tmp.280 = dup %tmp.14;
+        symbol [ Weather %tmp.281 274 17 24 ];
+        %tmp.281 = getm $.Toybox.Weather;
+        symbol [ CONDITION_UNKNOWN %tmp.282 274 25 42 ];
+        %tmp.282 = getv %tmp.281 :CONDITION_UNKNOWN;
+        %tmp.283 = getv function %tmp.280 :equals;
+        %tmp.284 = invoke %tmp.280 %tmp.283 (%tmp.282);
+        bt %tmp.284 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_274_12_274_42_switchCase;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 275 12 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_131_8_277_8_switchStmtDefault:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_131_8_277_8_defaultCodeBegin;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_133_12_133_40_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_134_12_141_16_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 135 16 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_16_141_16_if_stmt:
+        %tmp.285 = lgetv %isNight.1;
+        symbol [ isNight %tmp.285 135 20 27 ];
+        bf %tmp.285 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_16_141_16_if_else_false;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_16_141_16_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_29_138_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 137 20 ]
+        %tmp.286 = 61486;
+        symbol [ toChar %tmp.287 137 33 39 ];
+        %tmp.287 = getv function %tmp.286 :toChar;
+        %tmp.288 = invoke %tmp.286 %tmp.287();
+        ret %tmp.288;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_29_138_16_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_16_141_16_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_16_141_16_if_else_false:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_138_23_141_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 140 20 ]
+        %tmp.289 = 61453;
+        symbol [ toChar %tmp.290 140 33 39 ];
+        %tmp.290 = getv function %tmp.289 :toChar;
+        %tmp.291 = invoke %tmp.289 %tmp.290();
+        ret %tmp.291;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_138_23_141_16_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_135_16_141_16_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_143_12_143_47_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_144_12_151_16_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 145 16 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_16_151_16_if_stmt:
+        %tmp.292 = lgetv %isNight.1;
+        symbol [ isNight %tmp.292 145 20 27 ];
+        bf %tmp.292 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_16_151_16_if_else_false;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_16_151_16_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_29_148_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 147 20 ]
+        %tmp.293 = 61489;
+        symbol [ toChar %tmp.294 147 33 39 ];
+        %tmp.294 = getv function %tmp.293 :toChar;
+        %tmp.295 = invoke %tmp.293 %tmp.294();
+        ret %tmp.295;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_29_148_16_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_16_151_16_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_16_151_16_if_else_false:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_148_23_151_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 150 20 ]
+        %tmp.296 = 61442;
+        symbol [ toChar %tmp.297 150 33 39 ];
+        %tmp.297 = getv function %tmp.296 :toChar;
+        %tmp.298 = invoke %tmp.296 %tmp.297();
+        ret %tmp.298;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_148_23_151_16_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_145_16_151_16_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_156_12_156_48_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_157_12_164_16_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 158 16 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_16_164_16_if_stmt:
+        %tmp.299 = lgetv %isNight.1;
+        symbol [ isNight %tmp.299 158 20 27 ];
+        bf %tmp.299 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_16_164_16_if_else_false;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_16_164_16_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_29_161_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 160 20 ]
+        %tmp.300 = 61488;
+        symbol [ toChar %tmp.301 160 33 39 ];
+        %tmp.301 = getv function %tmp.300 :toChar;
+        %tmp.302 = invoke %tmp.300 %tmp.301();
+        ret %tmp.302;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_29_161_16_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_16_164_16_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_16_164_16_if_else_false:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_161_23_164_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 163 20 ]
+        %tmp.303 = 61442;
+        symbol [ toChar %tmp.304 163 33 39 ];
+        %tmp.304 = getv function %tmp.303 :toChar;
+        %tmp.305 = invoke %tmp.303 %tmp.304();
+        ret %tmp.305;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_161_23_164_16_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_158_16_164_16_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_166_12_166_41_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_167_12_169_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 169 16 ]
+        %tmp.306 = 61443;
+        symbol [ toChar %tmp.307 169 29 35 ];
+        %tmp.307 = getv function %tmp.306 :toChar;
+        %tmp.308 = invoke %tmp.306 %tmp.307();
+        ret %tmp.308;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_172_12_173_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 173 16 ]
+        %tmp.309 = 61465;
+        symbol [ toChar %tmp.310 173 29 35 ];
+        %tmp.310 = getv function %tmp.309 :toChar;
+        %tmp.311 = invoke %tmp.309 %tmp.310();
+        ret %tmp.311;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_175_12_175_45_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_176_12_177_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 177 16 ]
+        %tmp.312 = 61468;
+        symbol [ toChar %tmp.313 177 29 35 ];
+        %tmp.313 = getv function %tmp.312 :toChar;
+        %tmp.314 = invoke %tmp.312 %tmp.313();
+        ret %tmp.314;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_179_12_179_45_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_180_12_180_42_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_181_12_188_16_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 182 16 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_16_188_16_if_stmt:
+        %tmp.315 = lgetv %isNight.1;
+        symbol [ isNight %tmp.315 182 20 27 ];
+        bf %tmp.315 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_16_188_16_if_else_false;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_16_188_16_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_29_185_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 184 20 ]
+        %tmp.316 = 61494;
+        symbol [ toChar %tmp.317 184 33 39 ];
+        %tmp.317 = getv function %tmp.316 :toChar;
+        %tmp.318 = invoke %tmp.316 %tmp.317();
+        ret %tmp.318;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_29_185_16_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_16_188_16_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_16_188_16_if_else_false:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_185_23_188_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 187 20 ]
+        %tmp.319 = 61444;
+        symbol [ toChar %tmp.320 187 33 39 ];
+        %tmp.320 = getv function %tmp.319 :toChar;
+        %tmp.321 = invoke %tmp.319 %tmp.320();
+        ret %tmp.321;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_185_23_188_16_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_182_16_188_16_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_190_12_190_52_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_191_12_191_48_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_192_12_192_52_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_193_12_200_16_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 194 16 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_16_200_16_if_stmt:
+        %tmp.322 = lgetv %isNight.1;
+        symbol [ isNight %tmp.322 194 20 27 ];
+        bf %tmp.322 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_16_200_16_if_else_false;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_16_200_16_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_29_197_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 196 20 ]
+        %tmp.323 = 61498;
+        symbol [ toChar %tmp.324 196 33 39 ];
+        %tmp.324 = getv function %tmp.323 :toChar;
+        %tmp.325 = invoke %tmp.323 %tmp.324();
+        ret %tmp.325;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_29_197_16_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_16_200_16_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_16_200_16_if_else_false:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_197_23_200_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 199 20 ]
+        %tmp.326 = 61450;
+        symbol [ toChar %tmp.327 199 33 39 ];
+        %tmp.327 = getv function %tmp.326 :toChar;
+        %tmp.328 = invoke %tmp.326 %tmp.327();
+        ret %tmp.328;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_197_23_200_16_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_194_16_200_16_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_203_12_203_39_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_204_12_204_45_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_205_12_205_43_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_206_12_207_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 207 16 ]
+        %tmp.329 = 61466;
+        symbol [ toChar %tmp.330 207 29 35 ];
+        %tmp.330 = getv function %tmp.329 :toChar;
+        %tmp.331 = invoke %tmp.329 %tmp.330();
+        ret %tmp.331;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_209_12_214_16_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 210 16 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_16_214_16_if_stmt:
+        %tmp.332 = lgetv %isNight.1;
+        symbol [ isNight %tmp.332 210 20 27 ];
+        bf %tmp.332 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_16_214_16_if_else_false;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_16_214_16_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_29_212_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 211 20 ]
+        %tmp.333 = 61495;
+        symbol [ toChar %tmp.334 211 33 39 ];
+        %tmp.334 = getv function %tmp.333 :toChar;
+        %tmp.335 = invoke %tmp.333 %tmp.334();
+        ret %tmp.335;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_29_212_16_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_16_214_16_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_16_214_16_if_else_false:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_212_23_214_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 213 20 ]
+        %tmp.336 = 61449;
+        symbol [ toChar %tmp.337 213 33 39 ];
+        %tmp.337 = getv function %tmp.336 :toChar;
+        %tmp.338 = invoke %tmp.336 %tmp.337();
+        ret %tmp.338;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_212_23_214_16_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_210_16_214_16_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_216_12_216_45_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_217_12_217_44_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_218_12_218_50_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_219_12_219_50_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_220_12_220_54_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_221_12_221_61_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_222_12_223_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 223 16 ]
+        %tmp.339 = 61481;
+        symbol [ toChar %tmp.340 223 29 35 ];
+        %tmp.340 = getv function %tmp.339 :toChar;
+        %tmp.341 = invoke %tmp.339 %tmp.340();
+        ret %tmp.341;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_225_12_225_48_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_226_12_226_38_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_227_12_228_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 228 16 ]
+        %tmp.342 = 61454;
+        symbol [ toChar %tmp.343 228 29 35 ];
+        %tmp.343 = getv function %tmp.342 :toChar;
+        %tmp.344 = invoke %tmp.342 %tmp.343();
+        ret %tmp.344;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_230_12_235_16_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 231 16 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_16_235_16_if_stmt:
+        %tmp.345 = lgetv %isNight.1;
+        symbol [ isNight %tmp.345 231 20 27 ];
+        bf %tmp.345 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_16_235_16_if_else_false;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_16_235_16_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_29_233_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 232 20 ]
+        %tmp.346 = 61499;
+        symbol [ toChar %tmp.347 232 33 39 ];
+        %tmp.347 = getv function %tmp.346 :toChar;
+        %tmp.348 = invoke %tmp.346 %tmp.347();
+        ret %tmp.348;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_29_233_16_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_16_235_16_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_16_235_16_if_else_false:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_233_23_235_16_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 234 20 ]
+        %tmp.349 = 61449;
+        symbol [ toChar %tmp.350 234 33 39 ];
+        %tmp.350 = getv function %tmp.349 :toChar;
+        %tmp.351 = invoke %tmp.349 %tmp.350();
+        ret %tmp.351;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_233_23_235_16_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_231_16_235_16_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_238_12_238_48_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_239_12_239_58_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_240_12_241_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 241 16 ]
+        %tmp.352 = 61469;
+        symbol [ toChar %tmp.353 241 29 35 ];
+        %tmp.353 = getv function %tmp.352 :toChar;
+        %tmp.354 = invoke %tmp.352 %tmp.353();
+        ret %tmp.354;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_243_12_244_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 244 16 ]
+        %tmp.355 = 61506;
+        symbol [ toChar %tmp.356 244 29 35 ];
+        %tmp.356 = getv function %tmp.355 :toChar;
+        %tmp.357 = invoke %tmp.355 %tmp.356();
+        ret %tmp.357;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_246_12_246_44_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_247_12_248_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 248 16 ]
+        %tmp.358 = 61556;
+        symbol [ toChar %tmp.359 248 29 35 ];
+        %tmp.359 = getv function %tmp.358 :toChar;
+        %tmp.360 = invoke %tmp.358 %tmp.359();
+        ret %tmp.360;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_250_12_250_38_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_251_12_252_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 252 16 ]
+        %tmp.361 = 61460;
+        symbol [ toChar %tmp.362 252 29 35 ];
+        %tmp.362 = getv function %tmp.361 :toChar;
+        %tmp.363 = invoke %tmp.361 %tmp.362();
+        ret %tmp.363;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_254_12_254_39_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_255_12_255_39_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_256_12_257_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 257 16 ]
+        %tmp.364 = 61463;
+        symbol [ toChar %tmp.365 257 29 35 ];
+        %tmp.365 = getv function %tmp.364 :toChar;
+        %tmp.366 = invoke %tmp.364 %tmp.365();
+        ret %tmp.366;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_259_12_259_40_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_260_12_261_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 261 16 ]
+        %tmp.367 = 61473;
+        symbol [ toChar %tmp.368 261 29 35 ];
+        %tmp.368 = getv function %tmp.367 :toChar;
+        %tmp.369 = invoke %tmp.367 %tmp.368();
+        ret %tmp.369;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_263_12_263_39_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_264_12_264_39_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_265_12_265_44_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_266_12_267_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 267 16 ]
+        %tmp.370 = 61510;
+        symbol [ toChar %tmp.371 267 29 35 ];
+        %tmp.371 = getv function %tmp.370 :toChar;
+        %tmp.372 = invoke %tmp.370 %tmp.371();
+        ret %tmp.372;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_269_12_270_37_switchCase:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 270 16 ]
+        %tmp.373 = 61452;
+        symbol [ toChar %tmp.374 270 29 35 ];
+        %tmp.374 = getv function %tmp.373 :toChar;
+        %tmp.375 = invoke %tmp.373 %tmp.374();
+        ret %tmp.375;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_273_12_273_56_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_274_12_274_42_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_275_12_276_37_switchCase:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_131_8_277_8_defaultCodeBegin:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 276 16 ]
+        %tmp.376 = 61537;
+        symbol [ toChar %tmp.377 276 29 35 ];
+        %tmp.377 = getv function %tmp.376 :toChar;
+        %tmp.378 = invoke %tmp.376 %tmp.377();
+        ret %tmp.378;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_131_8_277_8_switchStmtEnd:
+        pop;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_122_43_278_4_stop:
+    }
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 281; @symbol_functiondef = [updateWeather,281,13,26]; ]
+    function updateWeather() as Void {
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_281_37_286_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 282 8 ]
+        symbol [ Weather %tmp.1 282 22 29 ];
+        %tmp.1 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.2 282 30 50 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentConditions;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ temperature %tmp.4 282 53 64 ];
+        %tmp.4 = getv %tmp.3 :temperature;
+        symbol [ toNumber %tmp.5 282 65 73 ];
+        %tmp.5 = getv function %tmp.4 :toNumber;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ toString %tmp.7 282 76 84 ];
+        %tmp.7 = getv function %tmp.6 :toString;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        %tmp.9 = "*";
+        %tmp.10 = add %tmp.8 %tmp.9;
+        symbol [ temperature ? 282 8 19 ];
+        putv self :temperature %tmp.10;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 283 8 ]
+        %tmp.11 = self;
+        symbol [ getWeatherIcon %tmp.12 283 26 40 ];
+        %tmp.12 = getv function %tmp.11 :getWeatherIcon;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        symbol [ temperatureLogo ? 283 8 23 ];
+        putv self :temperatureLogo %tmp.13;
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 285 8 ]
+        symbol [ WatchUi %tmp.14 285 8 15 ];
+        %tmp.14 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.15 285 16 29 ];
+        %tmp.15 = getv function %tmp.14 :requestUpdate;
+        invoke %tmp.14 %tmp.15();
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_281_37_286_4_stop:
+    }
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 289; @symbol_functiondef = [onStop,289,13,19]; ]
+    function onStop() as Void {
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_289_30_291_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 290 8 ]
+        symbol [ mWeatherTimer %tmp.2 290 8 21 ];
+        %tmp.2 = getv ? :mWeatherTimer;
+        symbol [ stop %tmp.3 290 22 26 ];
         %tmp.3 = getv function %tmp.2 :stop;
         invoke %tmp.2 %tmp.3();
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_114_36_116_4_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_289_30_291_4_stop:
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 121; @symbol_functiondef = [setupDigit,121,13,23]; @symbol_param<0> = [drawableId,121,24,34]; @symbol_param<1> = [font,121,36,40]; @symbol_param<2> = [text,121,42,46]; ]
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 293; @symbol_functiondef = [isSunDown,293,13,22]; @symbol_return<0> = [Boolean,293,28,35]; ]
+    function isSunDown() as Boolean {
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_293_36_300_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 294 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_293_36_300_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_293_36_300_4_stop" ]
+        %clockTime.1 = local;
+        symbol [ clockTime %clockTime.1 294 12 21 ];
+        symbol [ System %tmp.1 294 24 30 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.2 294 31 43 ];
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %clockTime.1 %tmp.3;
+        symbol [ clockTime %clockTime.1 294 12 21 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 295 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_293_36_300_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_293_36_300_4_stop" ]
+        %hour.2 = local;
+        symbol [ hour %hour.2 295 12 16 ];
+        %tmp.4 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.4 295 19 28 ];
+        symbol [ hour %tmp.5 295 29 33 ];
+        %tmp.5 = getv %tmp.4 :hour;
+        lputv %hour.2 %tmp.5;
+        symbol [ hour %hour.2 295 12 16 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 296 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_8_298_8_if_stmt:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_12_296_33_begin:
+        %tmp.6 = lgetv %hour.2;
+        symbol [ hour %tmp.6 296 12 16 ];
+        %tmp.7 = 18;
+        %tmp.8 = gte %tmp.6 %tmp.7;
+        bt %tmp.8 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_8_298_8_if_true;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_26_296_33_false:
+        %tmp.9 = lgetv %hour.2;
+        symbol [ hour %tmp.9 296 26 30 ];
+        %tmp.10 = 7;
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        push %tmp.11;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_26_296_33_end:
+        %tmp.12 = phi [%tmp.8 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_12_296_33_begin] [%tmp.11 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_26_296_33_false] [%tmp.12 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_26_296_33_end];
+        bf %tmp.12 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_8_298_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_8_298_8_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_36_298_8_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 297 12 ]
+        %tmp.13 = true;
+        ret %tmp.13;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_36_298_8_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_8_298_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_296_8_298_8_if_end:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 299 8 ]
+        %tmp.14 = false;
+        ret %tmp.14;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_293_36_300_4_stop:
+    }
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 303; @symbol_functiondef = [setupDigit,303,13,23]; @symbol_param<0> = [drawableId,303,24,34]; @symbol_param<1> = [font,303,36,40]; @symbol_param<2> = [text,303,42,46]; ]
     function setupDigit(drawableId, font, text) as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_121_56_128_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 122 8 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_121_56_128_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_121_56_128_4_stop" ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_303_56_310_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 304 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_303_56_310_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_303_56_310_4_stop" ]
         %drawable.1 = local;
-        symbol [ drawable %drawable.1 122 12 20 ];
-        symbol [ View %tmp.2 122 23 27 ];
+        symbol [ drawable %drawable.1 304 12 20 ];
+        symbol [ View %tmp.2 304 23 27 ];
         %tmp.2 = getv ? :View;
-        symbol [ findDrawableById %tmp.3 122 28 44 ];
+        symbol [ findDrawableById %tmp.3 304 28 44 ];
         %tmp.3 = getv function %tmp.2 :findDrawableById;
         %tmp.4 = lgetv %drawableId;
-        symbol [ drawableId %tmp.4 122 45 55 ];
+        symbol [ drawableId %tmp.4 304 45 55 ];
         %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
         %tmp.6 = as %tmp.5 Text;
-        symbol [ Text %tmp.6 122 60 64 ];
+        symbol [ Text %tmp.6 304 60 64 ];
         lputv %drawable.1 %tmp.6;
-        symbol [ drawable %drawable.1 122 12 20 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 123 8 ]
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_123_8_127_8_if_stmt:
+        symbol [ drawable %drawable.1 304 12 20 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 305 8 ]
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_305_8_309_8_if_stmt:
         %tmp.7 = lgetv %drawable.1;
-        symbol [ drawable %tmp.7 123 12 20 ];
+        symbol [ drawable %tmp.7 305 12 20 ];
         %tmp.8 = null;
         %tmp.9 = ne %tmp.7 %tmp.8;
-        bf %tmp.9 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_123_8_127_8_if_end;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_123_8_127_8_if_true:
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_123_30_127_8_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 124 12 ]
+        bf %tmp.9 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_305_8_309_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_305_8_309_8_if_true:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_305_30_309_8_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 306 12 ]
         %tmp.10 = lgetv %drawable.1;
-        symbol [ drawable %tmp.10 124 12 20 ];
+        symbol [ drawable %tmp.10 306 12 20 ];
         %tmp.11 = as %tmp.10 { (!Null) };
-        symbol [ setFont %tmp.12 124 21 28 ];
+        symbol [ setFont %tmp.12 306 21 28 ];
         %tmp.12 = getv function %tmp.11 :setFont;
         %tmp.13 = lgetv %font;
-        symbol [ font %tmp.13 124 29 33 ];
+        symbol [ font %tmp.13 306 29 33 ];
         invoke %tmp.11 %tmp.12(%tmp.13);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 125 12 ]
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc" 307 12 ]
         %tmp.14 = lgetv %drawable.1;
-        symbol [ drawable %tmp.14 125 12 20 ];
+        symbol [ drawable %tmp.14 307 12 20 ];
         %tmp.15 = as %tmp.14 { (!Null) };
-        symbol [ setText %tmp.16 125 21 28 ];
+        symbol [ setText %tmp.16 307 21 28 ];
         %tmp.16 = getv function %tmp.15 :setText;
         %tmp.17 = lgetv %text;
-        symbol [ text %tmp.17 125 29 33 ];
+        symbol [ text %tmp.17 307 29 33 ];
         invoke %tmp.15 %tmp.16(%tmp.17);
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_123_30_127_8_stop:
-        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_123_8_127_8_if_end;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_123_8_127_8_if_end:
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_121_56_128_4_stop:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_305_30_309_8_stop:
+        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_305_8_309_8_if_end;
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_305_8_309_8_if_end:
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_monCadranView_mc_303_56_310_4_stop:
     }
 }
 [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\monCadranView.mc"; @line = 1; ]

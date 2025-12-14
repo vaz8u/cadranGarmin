@@ -16,6 +16,8 @@ module Rez {
         (:initialized) var ds_digital_i as ResourceId;
         (:initialized) var ds_digital_b_i as ResourceId;
         (:initialized) var ds_digital_b_i_s as ResourceId;
+        (:initialized) var font_date as ResourceId;
+        (:initialized) var font_weather as ResourceId;
     } // Fonts
 
     module Layouts {
@@ -34,21 +36,27 @@ module Rez {
 
             var rez_cmp_local_text__SecondLabel2 = new WatchUi.Text({:identifier=>"_SecondLabel2", :color=>0xC5C6C2, :locX=>305, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            var rez_cmp_local_text_HourLabel = new WatchUi.Text({:identifier=>"HourLabel", :color=>0x272731, :locX=>85, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_HourLabel = new WatchUi.Text({:identifier=>"HourLabel", :color=>0x000000, :locX=>85, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            var rez_cmp_local_text_HourLabel2 = new WatchUi.Text({:identifier=>"HourLabel2", :color=>0x272731, :locX=>130, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_HourLabel2 = new WatchUi.Text({:identifier=>"HourLabel2", :color=>0x000000, :locX=>130, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            var rez_cmp_local_text_MinuteLabel = new WatchUi.Text({:identifier=>"MinuteLabel", :color=>0x272731, :locX=>190, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_MinuteLabel = new WatchUi.Text({:identifier=>"MinuteLabel", :color=>0x000000, :locX=>190, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            var rez_cmp_local_text_MinuteLabel2 = new WatchUi.Text({:identifier=>"MinuteLabel2", :color=>0x272731, :locX=>235, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_MinuteLabel2 = new WatchUi.Text({:identifier=>"MinuteLabel2", :color=>0x000000, :locX=>235, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            var rez_cmp_local_text_SecondLabel = new WatchUi.Text({:identifier=>"SecondLabel", :color=>0x272731, :locX=>275, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_SecondLabel = new WatchUi.Text({:identifier=>"SecondLabel", :color=>0x000000, :locX=>275, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            var rez_cmp_local_text_SecondLabel2 = new WatchUi.Text({:identifier=>"SecondLabel2", :color=>0x272731, :locX=>305, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_SecondLabel2 = new WatchUi.Text({:identifier=>"SecondLabel2", :color=>0x000000, :locX=>305, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            var rez_cmp_local_text_ColonLabel = new WatchUi.Text({:identifier=>"ColonLabel", :color=>0x272731, :locX=>160, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+            var rez_cmp_local_text_ColonLabel = new WatchUi.Text({:identifier=>"ColonLabel", :color=>0x000000, :locX=>160, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
 
-            return [rez_cmp_local_bitmap_g1, rez_cmp_local_text__HourLabel, rez_cmp_local_text__HourLabel2, rez_cmp_local_text__MinuteLabel, rez_cmp_local_text__MinuteLabel2, rez_cmp_local_text__SecondLabel, rez_cmp_local_text__SecondLabel2, rez_cmp_local_text_HourLabel, rez_cmp_local_text_HourLabel2, rez_cmp_local_text_MinuteLabel, rez_cmp_local_text_MinuteLabel2, rez_cmp_local_text_SecondLabel, rez_cmp_local_text_SecondLabel2, rez_cmp_local_text_ColonLabel] as Array<WatchUi.Drawable>;
+            var rez_cmp_local_text_DayNameLabel = new WatchUi.Text({:identifier=>"DayNameLabel", :color=>0x000000, :locX=>270, :locY=>140, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_TemperatureLabel = new WatchUi.Text({:identifier=>"TemperatureLabel", :color=>0x000000, :locX=>130, :locY=>140, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_WeatherIcon = new WatchUi.Text({:identifier=>"WeatherIcon", :color=>0x000000, :locX=>85, :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            return [rez_cmp_local_bitmap_g1, rez_cmp_local_text__HourLabel, rez_cmp_local_text__HourLabel2, rez_cmp_local_text__MinuteLabel, rez_cmp_local_text__MinuteLabel2, rez_cmp_local_text__SecondLabel, rez_cmp_local_text__SecondLabel2, rez_cmp_local_text_HourLabel, rez_cmp_local_text_HourLabel2, rez_cmp_local_text_MinuteLabel, rez_cmp_local_text_MinuteLabel2, rez_cmp_local_text_SecondLabel, rez_cmp_local_text_SecondLabel2, rez_cmp_local_text_ColonLabel, rez_cmp_local_text_DayNameLabel, rez_cmp_local_text_TemperatureLabel, rez_cmp_local_text_WeatherIcon] as Array<WatchUi.Drawable>;
         }
     } // Layouts
 
