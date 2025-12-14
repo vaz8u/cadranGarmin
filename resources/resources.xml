@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <fonts>
-        <font id="DigitalFont" filename="fonts/digitalfont.fnt"/>
-        <font id="Digital7Italic" filename="fonts/d2/digital-7-italic.fnt" antialias="true"/>
-        <font id="Digital7Italic_" filename="fonts/dig/digital.fnt" antialias="true"/>
+        <font id="ds_digital" filename="fonts/ds_digital/ds_digital.fnt" antialias="true"/>
+        <font id="ds_digital_b" filename="fonts/ds_digital_b/ds_digital_b.fnt" antialias="true"/>
+        <font id="ds_digital_i" filename="fonts/ds_digital_i/ds_digital_i.fnt" antialias="true"/>
+        <font id="ds_digital_b_i" filename="fonts/ds_digital_b_i/ds_digital_b_i.fnt" antialias="true"/>
+        <font id="ds_digital_b_i_s" filename="fonts/plus_petit/plus_petit.fnt" antialias="true"/>
 
     </fonts>
 
-       <bitmap id='BackgroundImage' filename='gif.gif' /> 
-    <!--  <animation id='BackgroundAnimation' filename='gif.mmm' />-->  
 </resources>

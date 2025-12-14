@@ -8,20 +8,26 @@ class monCadranView extends WatchUi.WatchFace {
     var _timer;
     var _showColon = true;
     var digital_font = null;
+    var digital_font_small = null;
     var bitmap = null;
+    var background_image = WatchUi.loadResource(Rez.Drawables.g1);
     var animation = null;
     var animationFinished = true;
 
+
     function initialize() {
         WatchFace.initialize();
-    //    animation  = new WatchUi.AnimationLayer(Rez.Drawables.BackgroundAnimation, {:locX=>100, :locY=>100});
-    //    addLayer(animation);
 
     }
-
+    
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.WatchFace(dc));
+        setLayout(Rez.Layouts.WatchFace(dc));   
+        bitmap = new WatchUi.Bitmap({
+            :rezId=>background_image,
+            :locX=>((dc.getWidth() - background_image.getWidth()) / 2),
+            :locY=>((dc.getHeight() - background_image.getHeight()) / 2)
+        });
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -30,79 +36,52 @@ class monCadranView extends WatchUi.WatchFace {
     function onShow() as Void {
         _timer = new Timer.Timer();
         _timer.start(method(:onTimer), 1000, true);
-       // digital_font = WatchUi.loadResource(Rez.Fonts.DigitalFont);
-        digital_font = WatchUi.loadResource(Rez.Fonts.Digital7Italic_);
+        digital_font_small = WatchUi.loadResource(Rez.Fonts.ds_digital_b_i_s);
+        digital_font = WatchUi.loadResource(Rez.Fonts.ds_digital_b_i);
         View.onShow();
     }
 
     function onUpdate(dc as Dc) as Void {
-        // Clear the screen
+      // Clear the screen
+        
         dc.clear();
-
+        bitmap.draw(dc);
         // background
-        var _firstHour = View.findDrawableById("_HourLabel") as Text;
-        _firstHour.setFont(digital_font);
-        _firstHour.setText(8.toString());
-        _firstHour.setSize(50,50);
+        setupDigit("_HourLabel", digital_font, "8");
+        setupDigit("_HourLabel2", digital_font, "8");
+        setupDigit("_MinuteLabel", digital_font, "8");
+        setupDigit("_MinuteLabel2", digital_font, "8");
+        setupDigit("_SecondLabel", digital_font_small, "8");
+        setupDigit("_SecondLabel2", digital_font_small, "8");
 
-        var _secondHour = View.findDrawableById("_HourLabel2") as Text;
-        _secondHour.setText(8.toString());
-        _secondHour.setFont(digital_font);
 
-        var _firstMinute = View.findDrawableById("_MinuteLabel") as Text;
-        _firstMinute.setText(8.toString());
-        _firstMinute.setFont(digital_font);
 
-        var _secondMinute = View.findDrawableById("_MinuteLabel2") as Text;
-        _secondMinute.setText(8.toString());
-        _secondMinute.setFont(digital_font);
 
-        var _firstSecond = View.findDrawableById("_SecondLabel") as Text;
-        _firstSecond.setText(8.toString());
-        _firstSecond.setFont(digital_font);
-
-        var _secondSecond = View.findDrawableById("_SecondLabel2") as Text;
-        _secondSecond.setText(8.toString());
-        _secondSecond.setFont(digital_font);  
 
         // Dessiner le reste de l'interface utilisateur
+        // 1. Récupérer l'heure système
         var clockTime = System.getClockTime();
-        var hourString = Lang.format("$1$", [clockTime.hour.format("%02d")]) as String; 
-        var minuteString = Lang.format("$1$", [clockTime.min.format("%02d")]) as String;
-        var secondString = Lang.format("$1$", [clockTime.sec.format("%02d")]) as String;
 
-        var firstHour = View.findDrawableById("HourLabel") as Text;
-        firstHour.setText(hourString.toCharArray()[0].toString());
-        firstHour.setFont(digital_font);
-        //firstHour.setColor(Graphics.COLOR_PINK);
-
-        var secondHour = View.findDrawableById("HourLabel2") as Text;
-        secondHour.setText(hourString.toCharArray()[1].toString());
-        secondHour.setFont(digital_font);
-
-        var firstMinute = View.findDrawableById("MinuteLabel") as Text;
-        firstMinute.setText(minuteString.toCharArray()[0].toString());
-        firstMinute.setFont(digital_font);
-
-        var secondMinute = View.findDrawableById("MinuteLabel2") as Text;
-        secondMinute.setText(minuteString.toCharArray()[1].toString());
-        secondMinute.setFont(digital_font);
-
-        var firstSecond = View.findDrawableById("SecondLabel") as Text;
-        firstSecond.setText(secondString.toCharArray()[0].toString());
-        firstSecond.setFont(digital_font);
+        // 2. Simplifier le formatage (pas besoin de Lang.format)
+        var hourString = clockTime.hour.format("%02d");
+        var minuteString = clockTime.min.format("%02d");
+        var secondString = clockTime.sec.format("%02d");
         
-
-        var secondSecond = View.findDrawableById("SecondLabel2") as Text;
-        secondSecond.setText(secondString.toCharArray()[1].toString());
-        secondSecond.setFont(digital_font);  
-
+        // 3. Mise à jour centralisée des chiffres de l'heure et des minutes
+        setupDigit("HourLabel", digital_font, hourString.substring(0, 1));
+        setupDigit("HourLabel2", digital_font, hourString.substring(1, 2));
+        setupDigit("MinuteLabel", digital_font, minuteString.substring(0, 1));
+        setupDigit("MinuteLabel2", digital_font, minuteString.substring(1, 2));
+        
+        // 4. Mise à jour des secondes (si elles sont affichées)
+        setupDigit("SecondLabel", digital_font_small, secondString.substring(0, 1));
+        setupDigit("SecondLabel2", digital_font_small, secondString.substring(1, 2));
+        
+        // 5. Gérer le côlon (clignotement)
         var colon = View.findDrawableById("ColonLabel") as Text;
-        colon.setFont(digital_font);
-        if (_showColon) {
-            colon.setText(":");
-        } else {
-            colon.setText(" ");
+        if (colon != null) {
+            colon.setFont(digital_font);
+            colon.setText(_showColon ? ":" : " ");
         }
 
         View.onUpdate(dc);
@@ -134,5 +113,17 @@ class monCadranView extends WatchUi.WatchFace {
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
         _timer.stop();
+    }
+
+    
+
+    // Fonction utilitaire pour configurer l'affichage d'un chiffre
+    function setupDigit(drawableId, font, text) as Void {
+        var drawable = View.findDrawableById(drawableId) as Text;
+        if (drawable != null) {
+            drawable.setFont(font);
+            drawable.setText(text);
+            // drawable.setSize(50, 50); 
+        }
     }
 }
