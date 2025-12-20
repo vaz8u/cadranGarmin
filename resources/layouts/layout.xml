@@ -1,6 +1,5 @@
 <layout id="WatchFace" background="Graphics.COLOR_TRANSPARENT">
-
-<bitmap id="g1" filename="../g1.png" />
+    <bitmap id="g1" filename="../g1.png" />
     <!-- Background -->
     <label id='_HourLabel'    x='85' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0xC5C6C2' />
     <label id='_HourLabel2'   x='130' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0xC5C6C2' />

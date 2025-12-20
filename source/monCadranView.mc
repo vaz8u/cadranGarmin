@@ -30,7 +30,7 @@ class monCadranView extends WatchUi.WatchFace {
     
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.WatchFace(dc));   
+        changeLayoutAsTime(dc);
         bitmap = new WatchUi.Bitmap({
             :rezId=>background_image,
             :locX=>((dc.getWidth() - background_image.getWidth()) / 2),
@@ -59,17 +59,14 @@ class monCadranView extends WatchUi.WatchFace {
     }
 
     function onUpdate(dc as Dc) as Void {
-      // Clear the screen
-        
+        // Clear the screen    
         dc.clear();
         bitmap.draw(dc);
+
+        changeLayoutAsTime(dc);
+
         // background
-        setupDigit("_HourLabel", digital_font, "8");
-        setupDigit("_HourLabel2", digital_font, "8");
-        setupDigit("_MinuteLabel", digital_font, "8");
-        setupDigit("_MinuteLabel2", digital_font, "8");
-        setupDigit("_SecondLabel", digital_font_small, "8");
-        setupDigit("_SecondLabel2", digital_font_small, "8");
+        setBackgroundDigits();
 
         var dayNameDrawable = View.findDrawableById("DayNameLabel") as Text;
         if (dayNameDrawable != null) {  
@@ -117,6 +114,25 @@ class monCadranView extends WatchUi.WatchFace {
         }
 
         View.onUpdate(dc);
+    }
+
+    // Fonction pour définir les chiffres de fond (8) pour l'effet visuel
+    function setBackgroundDigits(){
+        setupDigit("_HourLabel", digital_font, "8");
+        setupDigit("_HourLabel2", digital_font, "8");
+        setupDigit("_MinuteLabel", digital_font, "8");
+        setupDigit("_MinuteLabel2", digital_font, "8");
+        setupDigit("_SecondLabel", digital_font_small, "8");
+        setupDigit("_SecondLabel2", digital_font_small, "8");
+    }
+
+    function changeLayoutAsTime(dc as Dc) as Void {
+        if (isSunDown()) {
+            setLayout(Rez.Layouts.WatchFaceNight(dc));
+        } else {
+            setLayout(Rez.Layouts.WatchFace(dc));
+        }
+        WatchUi.requestUpdate();
     }
 
     function getWeatherIcon() as Lang.Char {
