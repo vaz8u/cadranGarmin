@@ -1,0 +1,37 @@
+{
+  "settings" : [ {
+    "key" : "affichage",
+    "valueType" : "number",
+    "defaultValue" : 0,
+    "configTitle" : "affichage",
+    "configPrompt" : "affichage",
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "affichage_normal",
+      "value" : 0
+    }, {
+      "display" : "affichage_nuit",
+      "value" : 1
+    }, {
+      "display" : "affichage_auto",
+      "value" : 2
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  } ],
+  "supportsLiveValidation" : false,
+  "languages" : {
+    "valyrian" : {
+      "affichage" : "Affichage",
+      "affichage_auto" : "Auto (selon l'heure)",
+      "affichage_nuit" : "Nuit",
+      "affichage_normal" : "Jour",
+      "AppName" : "monCadran"
+    }
+  }
+}

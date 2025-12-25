@@ -1,0 +1,84 @@
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Application,2,14,25]; @symbol_importdef<2> = [Properties,2,26,36]; ]
+import Toybox.Application.Properties;
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 4; @symbol_classdef = [MySubMenuDelegate,4,6,23]; @symbol_extends<0> = [WatchUi,4,32,39]; @symbol_extends<1> = [Menu2InputDelegate,4,40,58]; ]
+class MySubMenuDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 5; @symbol_functiondef = [initialize,5,13,23]; ]
+    function initialize() as Void {
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_5_26_7_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc" 6 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 6 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 6 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_5_26_7_4_stop:
+    }
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 9; @symbol_functiondef = [onSelect,9,13,21]; @symbol_param<0> = [item,9,22,26]; @symbol_param<0>_type<0> = [WatchUi,9,30,37]; @symbol_param<0>_type<1> = [MenuItem,9,38,46]; ]
+    function onSelect(item as WatchUi.MenuItem) as Void {
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_9_56_21_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc" 11 8 ]
+        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_9_56_21_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_9_56_21_4_stop" ]
+        %value.1 = local;
+        symbol [ value %value.1 11 12 17 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 11 20 24 ];
+        symbol [ getId %tmp.2 11 25 30 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %value.1 %tmp.3;
+        symbol [ value %value.1 11 12 17 ];
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc" 14 8 ]
+        symbol [ Properties %tmp.4 14 8 18 ];
+        %tmp.4 = getm $.Toybox.Application.Properties;
+        symbol [ setValue %tmp.5 14 19 27 ];
+        %tmp.5 = getv function %tmp.4 :setValue;
+        %tmp.6 = "affichage";
+        %tmp.7 = lgetv %value.1;
+        symbol [ value %tmp.7 14 41 46 ];
+        invoke %tmp.4 %tmp.5(%tmp.6, %tmp.7);
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc" 17 8 ]
+        symbol [ WatchUi %tmp.8 17 8 15 ];
+        %tmp.8 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.9 17 16 29 ];
+        %tmp.9 = getv function %tmp.8 :requestUpdate;
+        invoke %tmp.8 %tmp.9();
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc" 20 8 ]
+        symbol [ WatchUi %tmp.10 20 8 15 ];
+        %tmp.10 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.11 20 16 23 ];
+        %tmp.11 = getv function %tmp.10 :popView;
+        symbol [ WatchUi %tmp.12 20 24 31 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.13 20 32 43 ];
+        %tmp.13 = getv %tmp.12 :SLIDE_RIGHT;
+        invoke %tmp.10 %tmp.11(%tmp.13);
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_9_56_21_4_stop:
+    }
+    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 23; @symbol_functiondef = [onBack,23,13,19]; ]
+    function onBack() as Void {
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_23_30_25_4_start:
+[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc" 24 8 ]
+        symbol [ WatchUi %tmp.1 24 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 24 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 24 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 24 32 43 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySubMenuDelegate_mc_23_30_25_4_stop:
+    }
+}
+[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySubMenuDelegate.mc"; @line = 1; ]
+<init> {
+}

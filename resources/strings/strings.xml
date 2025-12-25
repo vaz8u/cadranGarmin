@@ -1,3 +1,8 @@
 <strings>
     <string id="AppName">monCadran</string>
+
+    <string id="affichage">Affichage</string>
+    <string id="affichage_normal">Jour</string>
+    <string id="affichage_nuit">Nuit</string>
+    <string id="affichage_auto">Auto (selon l'heure)</string>
 </strings>

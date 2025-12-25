@@ -7,6 +7,7 @@ using Toybox.Graphics as Gfx;
 module Rez {
     module Drawables {
         (:initialized) var g1 as ResourceId;
+        (:initialized) var g2 as ResourceId;
         (:initialized) var LauncherIcon as ResourceId;
     } // Drawables
 
@@ -58,9 +59,51 @@ module Rez {
 
             return [rez_cmp_local_bitmap_g1, rez_cmp_local_text__HourLabel, rez_cmp_local_text__HourLabel2, rez_cmp_local_text__MinuteLabel, rez_cmp_local_text__MinuteLabel2, rez_cmp_local_text__SecondLabel, rez_cmp_local_text__SecondLabel2, rez_cmp_local_text_HourLabel, rez_cmp_local_text_HourLabel2, rez_cmp_local_text_MinuteLabel, rez_cmp_local_text_MinuteLabel2, rez_cmp_local_text_SecondLabel, rez_cmp_local_text_SecondLabel2, rez_cmp_local_text_ColonLabel, rez_cmp_local_text_DayNameLabel, rez_cmp_local_text_TemperatureLabel, rez_cmp_local_text_WeatherIcon] as Array<WatchUi.Drawable>;
         }
+
+        function WatchFaceNight(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+            var rez_cmp_local_bitmap_g2 = new WatchUi.Bitmap({:identifier=>"g2", :rezId=>$.Rez.Drawables.g2});
+
+            var rez_cmp_local_text__HourLabel = new WatchUi.Text({:identifier=>"_HourLabel", :color=>0x1e272c, :locX=>85, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text__HourLabel2 = new WatchUi.Text({:identifier=>"_HourLabel2", :color=>0x1e272c, :locX=>130, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text__MinuteLabel = new WatchUi.Text({:identifier=>"_MinuteLabel", :color=>0x1e272c, :locX=>190, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text__MinuteLabel2 = new WatchUi.Text({:identifier=>"_MinuteLabel2", :color=>0x1e272c, :locX=>235, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text__SecondLabel = new WatchUi.Text({:identifier=>"_SecondLabel", :color=>0x1e272c, :locX=>275, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text__SecondLabel2 = new WatchUi.Text({:identifier=>"_SecondLabel2", :color=>0x1e272c, :locX=>305, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_HourLabel = new WatchUi.Text({:identifier=>"HourLabel", :color=>0xE2782E, :locX=>85, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_HourLabel2 = new WatchUi.Text({:identifier=>"HourLabel2", :color=>0xE2782E, :locX=>130, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_MinuteLabel = new WatchUi.Text({:identifier=>"MinuteLabel", :color=>0xE2782E, :locX=>190, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_MinuteLabel2 = new WatchUi.Text({:identifier=>"MinuteLabel2", :color=>0xE2782E, :locX=>235, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_SecondLabel = new WatchUi.Text({:identifier=>"SecondLabel", :color=>0xE2782E, :locX=>275, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_SecondLabel2 = new WatchUi.Text({:identifier=>"SecondLabel2", :color=>0xE2782E, :locX=>305, :locY=>193, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_ColonLabel = new WatchUi.Text({:identifier=>"ColonLabel", :color=>0xE2782E, :locX=>160, :locY=>175, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_DayNameLabel = new WatchUi.Text({:identifier=>"DayNameLabel", :color=>0xE2782E, :locX=>270, :locY=>140, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_TemperatureLabel = new WatchUi.Text({:identifier=>"TemperatureLabel", :color=>0xE2782E, :locX=>130, :locY=>140, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            var rez_cmp_local_text_WeatherIcon = new WatchUi.Text({:identifier=>"WeatherIcon", :color=>0xE2782E, :locX=>85, :locY=>145, :justification=>Graphics.TEXT_JUSTIFY_CENTER, :font=>Graphics.FONT_MEDIUM});
+
+            return [rez_cmp_local_bitmap_g2, rez_cmp_local_text__HourLabel, rez_cmp_local_text__HourLabel2, rez_cmp_local_text__MinuteLabel, rez_cmp_local_text__MinuteLabel2, rez_cmp_local_text__SecondLabel, rez_cmp_local_text__SecondLabel2, rez_cmp_local_text_HourLabel, rez_cmp_local_text_HourLabel2, rez_cmp_local_text_MinuteLabel, rez_cmp_local_text_MinuteLabel2, rez_cmp_local_text_SecondLabel, rez_cmp_local_text_SecondLabel2, rez_cmp_local_text_ColonLabel, rez_cmp_local_text_DayNameLabel, rez_cmp_local_text_TemperatureLabel, rez_cmp_local_text_WeatherIcon] as Array<WatchUi.Drawable>;
+        }
     } // Layouts
 
     module Strings {
+        (:initialized) var affichage as ResourceId;
+        (:initialized) var affichage_auto as ResourceId;
+        (:initialized) var affichage_normal as ResourceId;
+        (:initialized) var affichage_nuit as ResourceId;
         (:initialized) var AppName as ResourceId;
     } // Strings
 

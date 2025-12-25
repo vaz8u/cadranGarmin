@@ -21,6 +21,12 @@ class monCadranApp extends Application.AppBase {
         return [ new monCadranView() ];
     }
 
+    // Cette fonction permet à la montre de savoir qu'il y a un menu local
+    function getSettingsView() {
+        // On retourne un tableau avec : [La Vue du Menu, Le Délégué qui gère les clics]
+        return [new mySettingsMenu(), new mySettingsDelegate()] as Array;
+    }
+
 }
 
 function getApp() as monCadranApp {

@@ -5,7 +5,7 @@ import Toybox.WatchUi;
 import Toybox.Time;
 import Toybox.Timer;
 import Toybox.Weather;
-
+import Toybox.Application;
 
 class monCadranView extends WatchUi.WatchFace {
     var _timer;
@@ -23,27 +23,23 @@ class monCadranView extends WatchUi.WatchFace {
     var font_weather = null;
     var mWeatherTimer = null;
     var isNight = null;
+    var affichage = 2;
 
     function initialize() {
         WatchFace.initialize();
+        updateSettings();
     }
     
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         changeLayoutAsTime(dc);
-        bitmap = new WatchUi.Bitmap({
-            :rezId=>background_image,
-            :locX=>((dc.getWidth() - background_image.getWidth()) / 2),
-            :locY=>((dc.getHeight() - background_image.getHeight()) / 2)
-        });
     }
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-        var info = Time.Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
-        nom_jour = info.day_of_week + "-" + info.day.format("%02d");
+        setDay();
 
         // Initialiser le timer pour mettre à jour la météo toutes les 15 minutes (900000 ms)
         mWeatherTimer = new Timer.Timer();
@@ -55,23 +51,32 @@ class monCadranView extends WatchUi.WatchFace {
         digital_font = WatchUi.loadResource(Rez.Fonts.ds_digital_b_i);
         font_date = WatchUi.loadResource(Rez.Fonts.font_date);
         font_weather = WatchUi.loadResource(Rez.Fonts.font_weather);
+
         View.onShow();
     }
 
     function onUpdate(dc as Dc) as Void {
         // Clear the screen    
         dc.clear();
+        if(bitmap == null){
+            changeLayoutAsTime(dc);
+        }
         bitmap.draw(dc);
-
-        changeLayoutAsTime(dc);
 
         // background
         setBackgroundDigits();
+
+         var info = Time.Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+        nom_jour = info.day_of_week + "-" + info.day.format("%02d");
 
         var dayNameDrawable = View.findDrawableById("DayNameLabel") as Text;
         if (dayNameDrawable != null) {  
             dayNameDrawable.setFont(font_date);
             dayNameDrawable.setText(nom_jour);
+            // si c'est egal a 1, ou entre 10 et 19, ou 21 ou 31, on deplace un peu a gauche
+            if(info.day_of_week == 1 || (info.day >=10 && info.day <=19) || info.day == 21 || info.day == 31){
+                dayNameDrawable.setLocation(dayNameDrawable.locX-10, dayNameDrawable.locY);
+            }
         }
 
         var tempDrawable = View.findDrawableById("TemperatureLabel") as Text;
@@ -116,6 +121,30 @@ class monCadranView extends WatchUi.WatchFace {
         View.onUpdate(dc);
     }
 
+    function updateSettings() as Void {
+        var brandText = Properties.getValue("affichage");
+        if (brandText == null || brandText > 2) {
+            brandText = 2;
+        }
+        affichage = brandText;
+        WatchUi.requestUpdate();
+    }
+
+    function setDay(){
+        var info = Time.Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+        nom_jour = info.day_of_week + "-" + info.day.format("%02d");
+
+        var dayNameDrawable = View.findDrawableById("DayNameLabel") as Text;
+        if (dayNameDrawable != null) {  
+            dayNameDrawable.setFont(font_date);
+            dayNameDrawable.setText(nom_jour);
+            // si c'est egal a 1, ou entre 10 et 19, ou 21 ou 31, on deplace un peu a gauche
+            if(info.day_of_week == 1 || (info.day >=10 && info.day <=19) || info.day == 21 || info.day == 31){
+                dayNameDrawable.setLocation(dayNameDrawable.locX-10, dayNameDrawable.locY);
+            }
+        }
+    }
+
     // Fonction pour définir les chiffres de fond (8) pour l'effet visuel
     function setBackgroundDigits(){
         setupDigit("_HourLabel", digital_font, "8");
@@ -127,11 +156,32 @@ class monCadranView extends WatchUi.WatchFace {
     }
 
     function changeLayoutAsTime(dc as Dc) as Void {
-        if (isSunDown()) {
-            setLayout(Rez.Layouts.WatchFaceNight(dc));
-        } else {
-            setLayout(Rez.Layouts.WatchFace(dc));
+        var isNightNow = isSunDown();
+
+        if(isNightNow == isNight && affichage == 2){
+            return; // Pas de changement nécessaire
         }
+        
+        if (isNightNow || affichage == 1) {
+            setLayout(Rez.Layouts.WatchFaceNight(dc));
+            background_image = WatchUi.loadResource(Rez.Drawables.g2); // Image de nuit
+            bitmap = new WatchUi.Bitmap({
+                :bitmap => background_image, // Utilisez :bitmap ici !
+                :locX => ((dc.getWidth() - background_image.getWidth()) / 2),
+                :locY => ((dc.getHeight() - background_image.getHeight()) / 2)
+            });
+        } 
+
+        else {
+            setLayout(Rez.Layouts.WatchFace(dc));
+            background_image = WatchUi.loadResource(Rez.Drawables.g1); // Image de jour
+            bitmap = new WatchUi.Bitmap({
+                :bitmap => background_image, // Utilisez :bitmap ici !
+                :locX => ((dc.getWidth() - background_image.getWidth()) / 2),
+                :locY => ((dc.getHeight() - background_image.getHeight()) / 2)
+            });
+        }
+
         WatchUi.requestUpdate();
     }
 
