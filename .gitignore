@@ -4,3 +4,4 @@ bin/gen/
 bin/mir/
 bin/internat-mir/
 *.debug.xml
+/output
