@@ -50,22 +50,9 @@
 
     <layout id="WatchFaceAnalog" background="Graphics.COLOR_TRANSPARENT">
         <bitmap id="omega" filename="../omega1.png" />
-        <bitmap id="aiguille_heure" filename="../heures.png" />
-        <bitmap id="aiguille_minute" filename="../minutes.png" />
-        <bitmap id="aiguille_seconde" filename="../secondes.png" />
-        <bitmap id="aiguille_gauche" filename="../pg.png" />
-        <bitmap id="aiguille_droite" filename="../pd.png" />
-        <bitmap id="aiguille_bas" filename="../pb.png" />
     </layout>
 
     <layout id="WatchFaceAnalogNight" background="Graphics.COLOR_TRANSPARENT">
         <bitmap id="omega" filename="../omega1.png" />
-        <bitmap id="aiguille_heure" filename="../heures.png" />
-        <bitmap id="aiguille_minute" filename="../minutes.png" />
-        <bitmap id="aiguille_seconde" filename="../secondes.png" />
-        <bitmap id="aiguille_gauche" filename="../pg.png" />
-        <bitmap id="aiguille_droite" filename="../pd.png" />
-        <bitmap id="aiguille_bas" filename="../pb.png" />
-        
     </layout>
 </layouts>

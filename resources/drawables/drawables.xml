@@ -1,8 +1,12 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
-    <bitmap id="aiguille_heure" filename="../aiguille_heure.png" />
-    <bitmap id="aiguille_minute" filename="../aiguille_minute.png" />
-    <bitmap id="aiguille_seconde" filename="../aiguille_seconde.png" />
+    <bitmap id="aiguille_heure" filename="../heures-p.png" />
+    <bitmap id="aiguille_minute" filename="../minutes-p.png" />
+    <bitmap id="aiguille_seconde" filename="../secondes-p.png" />
+    <bitmap id="aiguille_gauche" filename="../pbc-p.png" />
+    <bitmap id="aiguille_droite" filename="../pbc-p.png" />
+    <bitmap id="aiguille_bas" filename="../pbc-p.png" />
+    <bitmap id="aiguille" filename="../pbc-p.png" />
     <bitmap id="omega1" filename="../omega1.png" />
 
 </drawables>
