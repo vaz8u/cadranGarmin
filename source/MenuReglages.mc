@@ -3,6 +3,7 @@ import Toybox.Lang;
 import Toybox.Application.Properties;
 
 module MenuConfig {
+    const ID_MENU_CADRAN = :id_menu_cadran;
     const ID_MENU_AFFICHAGE = :id_menu_affichage; 
 }
 
@@ -11,6 +12,21 @@ class MenuReglages extends WatchUi.Menu2 {
     function initialize() {
         Menu2.initialize({:title => "Réglages"});
         
+        // === Cadran ===
+        var idx_cadran = Properties.getValue("cadran");
+        if (!(idx_cadran instanceof Number)) { idx_cadran = 0; }
+        var nom_cadran = ConfigCadran.obtenir_nom(idx_cadran);
+
+        addItem(
+            new WatchUi.MenuItem(
+                "Cadran",
+                nom_cadran,
+                MenuConfig.ID_MENU_CADRAN,
+                {}
+            )
+        );
+
+        // === Mode Affichage ===
         var val = Properties.getValue("affichage");
         if (!(val instanceof Number)) { val = 2; } 
 
@@ -36,7 +52,11 @@ class DelegueMenuReglages extends WatchUi.Menu2InputDelegate {
     }
 
     function onSelect(item as WatchUi.MenuItem) as Void {
-        if (item.getId() == MenuConfig.ID_MENU_AFFICHAGE) {
+        var id = item.getId();
+        if (id == MenuConfig.ID_MENU_CADRAN) {
+            WatchUi.pushView(new SousMenuCadran(), new DelegueSousMenuCadran(), WatchUi.SLIDE_LEFT);
+        }
+        else if (id == MenuConfig.ID_MENU_AFFICHAGE) {
             WatchUi.pushView(new SousMenuMode(), new DelegueSousMenuMode(), WatchUi.SLIDE_LEFT);
         }
     }

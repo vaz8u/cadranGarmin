@@ -7,6 +7,7 @@ import Toybox.Timer;
 import Toybox.Weather;
 import Toybox.Application;
 import Toybox.Position;
+import Toybox.Math;
 
 class Constantes {
     // Chiffres pour affichage digital
@@ -161,6 +162,20 @@ class VueCadran extends WatchUi.WatchFace {
     private var en_basse_consommation_ as Boolean = false;
     private var type_affichage_ as Number = 2;
     
+    // === MULTI-CADRAN ===
+    private var cadran_index_ as Number = 0;
+    private var config_cadran_ as Dictionary = {};
+    
+    // Aiguilles (Images cache)
+    private var bmp_heure_ as Graphics.BufferedBitmap?;
+    private var bmp_minute_ as Graphics.BufferedBitmap?;
+    private var bmp_seconde_ as Graphics.BufferedBitmap?;
+    
+    // Sous-Cadrans (Images cache)
+    private var bmp_gauche_ as Graphics.BufferedBitmap?;
+    private var bmp_droite_ as Graphics.BufferedBitmap?;
+    private var bmp_bas_ as Graphics.BufferedBitmap?;
+
     // Objets Texte 
     private var lbl_heure_1_ as Text?;
     private var lbl_heure_2_ as Text?;
@@ -234,16 +249,16 @@ class VueCadran extends WatchUi.WatchFace {
         lbl_temp_ = View.findDrawableById("TemperatureLabel") as Text;
         lbl_icon_ = View.findDrawableById("WeatherIcon") as Text;
 
-        if (police_date_ != null) { 
+        if (police_date_ != null && lbl_date_ != null) { 
             lbl_date_.setFont(police_date_); 
             centre_x_date_ = lbl_date_.locX + (LARGEUR_ZONE_DATE / 2);
         }
 
-        if (police_date_ != null) { 
+        if (police_date_ != null && lbl_temp_ != null) { 
             lbl_temp_.setFont(police_date_); 
         }
 
-        if (police_meteo_ != null) { 
+        if (police_meteo_ != null && lbl_icon_ != null) { 
             lbl_icon_.setFont(police_meteo_); 
         }
         
@@ -269,23 +284,87 @@ class VueCadran extends WatchUi.WatchFace {
 
         dessiner_chiffres_fond_dynamique(); 
         mettre_a_jour_date(dc);
-        mettre_a_jour_meteo(dc);
+        
+        // Météo conditionnelle selon la config du cadran
+        var afficher_meteo = config_cadran_[ConfigCadran.CLE_METEO];
+        if (afficher_meteo != null && afficher_meteo as Boolean) {
+            mettre_a_jour_meteo(dc);
+        }
+
         mettre_a_jour_heure_optimisee(); 
 
         View.onUpdate(dc);
+
+        // Aiguilles analogiques conditionnelles selon la config du cadran
+        var afficher_aiguilles = config_cadran_[ConfigCadran.CLE_AIGUILLES];
+        if (afficher_aiguilles != null && afficher_aiguilles as Boolean) {
+            dessiner_aiguilles(dc);
+        }
     }
 
     // Rechargement des réglages
     public function recharger_configuration_externe() as Void {
+        var ancien_cadran = cadran_index_;
         charger_reglages();
+        // Force le rechargement complet si le cadran a changé
+        if (ancien_cadran != cadran_index_) {
+            bitmap_fond_ = null;
+            est_mode_nuit_ = !est_mode_nuit_; // Force le changement de layout
+        }
         bitmap_fond_ = null; 
         WatchUi.requestUpdate();
     }
 
     // Chargement des réglages depuis les propriétés
     private function charger_reglages() as Void {
+        // Mode d'affichage (jour/nuit/auto)
         var v = Application.Properties.getValue("affichage");
         type_affichage_ = (v instanceof Number) ? v : 2;
+        
+        // Index du cadran sélectionné
+        var c = Application.Properties.getValue("cadran");
+        cadran_index_ = (c instanceof Number) ? c : 0;
+        
+        // Sécurité : valider l'index
+        if (cadran_index_ < 0 || cadran_index_ >= ConfigCadran.nombre_cadrans()) {
+            cadran_index_ = 0;
+        }
+        
+        // Charger la configuration du cadran
+        config_cadran_ = ConfigCadran.obtenir_config(cadran_index_);
+        
+        // === Charger les images des aiguilles si actives ===
+        var config_aig = config_cadran_[ConfigCadran.CLE_AIGUILLES];
+        if (config_aig != null && config_aig as Boolean) {
+            var res_h = config_cadran_[ConfigCadran.CLE_IMG_HEURE];
+            var res_m = config_cadran_[ConfigCadran.CLE_IMG_MINUTE];
+            var res_s = config_cadran_[ConfigCadran.CLE_IMG_SECONDE];
+            var res_g = config_cadran_[ConfigCadran.CLE_IMG_GAUCHE];
+            var res_d = config_cadran_[ConfigCadran.CLE_IMG_DROITE];
+            var res_b = config_cadran_[ConfigCadran.CLE_IMG_BAS];
+            
+            bmp_heure_ = (res_h != null) ? load_native_bitmap(res_h) : null;
+            bmp_minute_ = (res_m != null) ? load_native_bitmap(res_m) : null;
+            bmp_seconde_ = (res_s != null) ? load_native_bitmap(res_s) : null;
+            bmp_gauche_ = (res_g != null) ? load_native_bitmap(res_g) : null;
+            bmp_droite_ = (res_d != null) ? load_native_bitmap(res_d) : null;
+            bmp_bas_ = (res_b != null) ? load_native_bitmap(res_b) : null;
+        } else {
+            bmp_heure_ = null;
+            bmp_minute_ = null;
+            bmp_seconde_ = null;
+            bmp_gauche_ = null;
+            bmp_droite_ = null;
+            bmp_bas_ = null;
+        }
+    }
+
+    private function load_native_bitmap(res_id as Object) as Graphics.BufferedBitmap? {
+        var res = WatchUi.loadResource(res_id as Lang.ResourceId);
+        if (res instanceof WatchUi.BitmapResource) {
+            return Graphics.createBufferedBitmap({:bitmapResource => res}) as Graphics.BufferedBitmap;
+        }
+        return null;
     }
 
     // Applique le layout Jour/Nuit selon l'heure et les réglages
@@ -312,10 +391,15 @@ class VueCadran extends WatchUi.WatchFace {
 
         if (est_mode_nuit_ == target && bitmap_fond_ != null) { return; }
         
-        var res = target ? Rez.Drawables.g2 : Rez.Drawables.g1;
+        // Bitmaps selon le cadran sélectionné
+        var res = target ? config_cadran_[ConfigCadran.CLE_FOND_NUIT] : config_cadran_[ConfigCadran.CLE_FOND_JOUR];
         est_mode_nuit_ = target;
         
-        setLayout(target ? Rez.Layouts.WatchFaceNight(dc) : Rez.Layouts.WatchFace(dc));
+        // Layouts selon le cadran sélectionné
+        var layout = target 
+            ? ConfigCadran.obtenir_layout_nuit(cadran_index_, dc) 
+            : ConfigCadran.obtenir_layout_jour(cadran_index_, dc);
+        setLayout(layout);
         rafraichir_pointeurs_objets(); 
         
         image_fond_ = WatchUi.loadResource(res);
@@ -431,8 +515,74 @@ class VueCadran extends WatchUi.WatchFace {
     // Mise à jour d'un texte statique
     private function set_static_text(id as String, font as Resource?, txt as String) as Void {
         if (font == null) { return; }
-        var d = View.findDrawableById(id) as Text;
-        d.setFont(font);
-        d.setText(txt);
+        var d = View.findDrawableById(id) as Text?;
+        if (d != null) {
+            d.setFont(font);
+            d.setText(txt);
+        }
     }
+
+    // ==========================================
+    // AIGUILLES ANALOGIQUES
+    // ==========================================
+    private function dessiner_aiguilles(dc as Dc) as Void {
+        var cx = dc.getWidth() / 2.0d;
+        var cy = dc.getHeight() / 2.0d;
+        var t = System.getClockTime();
+        
+        // --- Heures ---
+        if (bmp_heure_ != null) {
+            var angle_h = (((t.hour % 12) * 30.0d + t.min * 0.5d)) * Math.PI / 180.0d;
+            dessiner_image_tournante(dc, cx, cy, angle_h, bmp_heure_, 7.0d, 85.0d);
+        }
+        
+        // --- Minutes ---
+        if (bmp_minute_ != null) {
+            var angle_m = ((t.min * 6.0d + t.sec * 0.1d)) * Math.PI / 180.0d;
+            dessiner_image_tournante(dc, cx, cy, angle_m, bmp_minute_, 5.0d, 120.0d);
+        }
+        
+        // --- Secondes ---
+        if (!en_basse_consommation_ && bmp_seconde_ != null) {
+            var angle_s = (t.sec * 6.0d) * Math.PI / 180.0d;
+            dessiner_image_tournante(dc, cx, cy, angle_s, bmp_seconde_, 1.5d, 140.0d);
+        }
+        
+        // --- SOUS-CADRANS / PETITES AIGUILLES ---
+        // Vous devez ajuster les coordonnées du centre du sous-cadran par rapport au centre de l'écran (cx, cy)
+        // et le pivot_x, pivot_y pour qu'ils matchent parfaitement avec la résolution de votre image pd.png, etc.
+        
+        if (bmp_gauche_ != null) {
+            // Ex: Aiguille de gauche (à 9h)
+            var angle_g = (t.sec * 6.0d) * Math.PI / 180.0d; // Anime avec secondes
+            dessiner_image_tournante(dc, cx - 85, cy, angle_g, bmp_gauche_, 10.0d, 40.0d);
+        }
+        
+        if (bmp_droite_ != null) {
+            // Ex: Aiguille de droite (à 3h)
+            var angle_d = (t.min * 6.0d) * Math.PI / 180.0d; // Anime avec minutes
+            dessiner_image_tournante(dc, cx + 85, cy, angle_d, bmp_droite_, 10.0d, 40.0d);
+        }
+        
+        if (bmp_bas_ != null) {
+            // Ex: Aiguille du bas (à 6h)
+            var angle_b = (t.hour * 30.0d) * Math.PI / 180.0d; // Anime avec heures
+            dessiner_image_tournante(dc, cx, cy + 85, angle_b, bmp_bas_, 10.0d, 40.0d);
+        }
+        
+        // --- Cercle central rouge pour cacher les pivots ---
+        //dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+        //dc.fillCircle(cx.toNumber(), cy.toNumber(), 5);
+        //dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        //dc.fillCircle(cx.toNumber(), cy.toNumber(), 2);
+    }
+
+    private function dessiner_image_tournante(dc as Dc, cx as Double, cy as Double, angle_rad as Double, img as Graphics.BufferedBitmap, pivot_x as Double, pivot_y as Double) as Void {
+        var t = new Graphics.AffineTransform();
+        t.translate(cx as Float, cy as Float);
+        t.rotate(angle_rad as Float);
+        t.translate(-pivot_x as Float, -pivot_y as Float);
+        dc.drawBitmap2(0, 0, img, { :transform => t });
+    }
+    
 }

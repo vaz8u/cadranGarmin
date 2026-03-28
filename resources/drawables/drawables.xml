@@ -1,5 +1,8 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
-            
+    <bitmap id="aiguille_heure" filename="../aiguille_heure.png" />
+    <bitmap id="aiguille_minute" filename="../aiguille_minute.png" />
+    <bitmap id="aiguille_seconde" filename="../aiguille_seconde.png" />
+    <bitmap id="omega1" filename="../omega1.png" />
 
 </drawables>

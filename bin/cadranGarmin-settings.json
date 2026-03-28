@@ -1,5 +1,26 @@
 {
   "settings" : [ {
+    "key" : "cadran",
+    "valueType" : "number",
+    "defaultValue" : 0,
+    "configTitle" : "cadran",
+    "configPrompt" : "cadran",
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "cadran_0",
+      "value" : 0
+    }, {
+      "display" : "cadran_1",
+      "value" : 1
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
     "key" : "affichage",
     "valueType" : "number",
     "defaultValue" : 0,
@@ -29,8 +50,11 @@
     "valyrian" : {
       "affichage" : "Affichage",
       "affichage_auto" : "Auto (selon l'heure)",
-      "affichage_nuit" : "Nuit",
+      "cadran_1" : "Casio Analog",
+      "cadran_0" : "Casio Digital",
       "affichage_normal" : "Jour",
+      "cadran" : "Cadran",
+      "affichage_nuit" : "Nuit",
       "AppName" : "monCadran"
     }
   }

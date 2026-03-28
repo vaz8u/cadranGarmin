@@ -1,32 +1,32 @@
-[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+[ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
 import Toybox.WatchUi;
-[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Application,2,14,25]; @symbol_importdef<2> = [Properties,2,26,36]; ]
+[ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Application,2,14,25]; @symbol_importdef<2> = [Properties,2,26,36]; ]
 import Toybox.Application.Properties;
-[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 4; @symbol_classdef = [mySettingsDelegate,4,6,24]; @symbol_extends<0> = [WatchUi,4,33,40]; @symbol_extends<1> = [Menu2InputDelegate,4,41,59]; ]
+[ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 4; @symbol_classdef = [mySettingsDelegate,4,6,24]; @symbol_extends<0> = [WatchUi,4,33,40]; @symbol_extends<1> = [Menu2InputDelegate,4,41,59]; ]
 class mySettingsDelegate extends WatchUi.Menu2InputDelegate {
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 4; ]
+    [ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 4; ]
     <init> {
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 4; ]
+    [ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 4; ]
     static
     <init> {
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; ]
+    [ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 6; @symbol_functiondef = [initialize,6,13,23]; ]
     function initialize() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_6_26_8_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 7 8 ]
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_6_26_8_4_start:
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 7 8 ]
         symbol [ Menu2InputDelegate %tmp.2 7 8 26 ];
         %tmp.2 = getv ? :Menu2InputDelegate;
         symbol [ initialize %tmp.3 7 27 37 ];
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_6_26_8_4_stop:
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_6_26_8_4_stop:
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 10; @symbol_functiondef = [onSelect,10,13,21]; @symbol_param<0> = [item,10,22,26]; @symbol_param<0>_type<0> = [WatchUi,10,30,37]; @symbol_param<0>_type<1> = [MenuItem,10,38,46]; ]
+    [ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 10; @symbol_functiondef = [onSelect,10,13,21]; @symbol_param<0> = [item,10,22,26]; @symbol_param<0>_type<0> = [WatchUi,10,30,37]; @symbol_param<0>_type<1> = [MenuItem,10,38,46]; ]
     function onSelect(item as WatchUi.MenuItem) as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 11 8 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_stop" ]
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_start:
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 11 8 ]
+        [ "_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_start" "_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_stop" ]
         %id.1 = local;
         symbol [ id %id.1 11 12 14 ];
         %tmp.1 = lgetv %item;
@@ -39,19 +39,19 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_10_56_
         %tmp.5 = invoke %tmp.3 %tmp.4();
         lputv %id.1 %tmp.5;
         symbol [ id %id.1 11 12 14 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 13 8 ]
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_stmt:
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 13 8 ]
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_stmt:
         %tmp.6 = lgetv %id.1;
         symbol [ id %tmp.6 13 12 14 ];
         symbol [ equals %tmp.7 13 15 21 ];
         %tmp.7 = getv function %tmp.6 :equals;
         %tmp.8 = "affichage";
         %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
-        bf %tmp.9 @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_end;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_true:
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 15 12 ]
-        [ "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_start" "C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_stop" ]
+        bf %tmp.9 @_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_end;
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_true:
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_start:
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 15 12 ]
+        [ "_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_start" "_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_stop" ]
         %subMenu.2 = local;
         symbol [ subMenu %subMenu.2 15 16 23 ];
         symbol [ WatchUi %tmp.12 15 30 37 ];
@@ -67,7 +67,7 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_
         %tmp.10 = newc %tmp.13 (%tmp.19);
         lputv %subMenu.2 %tmp.10;
         symbol [ subMenu %subMenu.2 15 16 23 ];
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 18 12 ]
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 18 12 ]
         %tmp.20 = lgetv %subMenu.2;
         symbol [ subMenu %tmp.20 18 12 19 ];
         symbol [ addItem %tmp.21 18 20 27 ];
@@ -82,7 +82,7 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_
         %tmp.29 = newd 0;
         %tmp.22 = newc %tmp.25 (%tmp.26, %tmp.27, %tmp.28, %tmp.29);
         invoke %tmp.20 %tmp.21(%tmp.22);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 19 12 ]
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 19 12 ]
         %tmp.30 = lgetv %subMenu.2;
         symbol [ subMenu %tmp.30 19 12 19 ];
         symbol [ addItem %tmp.31 19 20 27 ];
@@ -97,7 +97,7 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_
         %tmp.39 = newd 0;
         %tmp.32 = newc %tmp.35 (%tmp.36, %tmp.37, %tmp.38, %tmp.39);
         invoke %tmp.30 %tmp.31(%tmp.32);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 20 12 ]
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 20 12 ]
         %tmp.40 = lgetv %subMenu.2;
         symbol [ subMenu %tmp.40 20 12 19 ];
         symbol [ addItem %tmp.41 20 20 27 ];
@@ -112,7 +112,7 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_
         %tmp.49 = newd 0;
         %tmp.42 = newc %tmp.45 (%tmp.46, %tmp.47, %tmp.48, %tmp.49);
         invoke %tmp.40 %tmp.41(%tmp.42);
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 23 12 ]
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 23 12 ]
         symbol [ WatchUi %tmp.50 23 12 19 ];
         %tmp.50 = getm $.Toybox.WatchUi;
         symbol [ pushView %tmp.51 23 20 28 ];
@@ -127,15 +127,15 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_
         symbol [ SLIDE_LEFT %tmp.58 23 71 81 ];
         %tmp.58 = getv %tmp.57 :SLIDE_LEFT;
         invoke %tmp.50 %tmp.51(%tmp.52, %tmp.53, %tmp.58);
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_stop:
-        goto @C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_end;
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_end:
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_stop:
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_36_24_8_stop:
+        goto @_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_end;
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_13_8_24_8_if_end:
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_10_56_25_4_stop:
     }
-    [ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 27; @symbol_functiondef = [onBack,27,13,19]; ]
+    [ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 27; @symbol_functiondef = [onBack,27,13,19]; ]
     function onBack() as Void {
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_27_30_29_4_start:
-[ "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc" 28 8 ]
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_27_30_29_4_start:
+[ "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc" 28 8 ]
         symbol [ WatchUi %tmp.1 28 8 15 ];
         %tmp.1 = getm $.Toybox.WatchUi;
         symbol [ popView %tmp.2 28 16 23 ];
@@ -145,9 +145,9 @@ C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_27_30_
         symbol [ SLIDE_IMMEDIATE %tmp.4 28 32 47 ];
         %tmp.4 = getv %tmp.3 :SLIDE_IMMEDIATE;
         invoke %tmp.1 %tmp.2(%tmp.4);
-C__Users_Pierre_Documents_GitHub_cadranGarmin_source_mySettingDelegate_mc_27_30_29_4_stop:
+_Users_vaz_Document_ProjetsPerso_cadranGarmin_source_mySettingDelegate_mc_27_30_29_4_stop:
     }
 }
-[ @file = "C:\Users\Pierre\Documents\GitHub\cadranGarmin\source\mySettingDelegate.mc"; @line = 1; ]
+[ @file = "/Users/vaz/Document/ProjetsPerso/cadranGarmin/source/mySettingDelegate.mc"; @line = 1; ]
 <init> {
 }

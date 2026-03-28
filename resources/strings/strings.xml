@@ -5,4 +5,8 @@
     <string id="affichage_normal">Jour</string>
     <string id="affichage_nuit">Nuit</string>
     <string id="affichage_auto">Auto (selon l'heure)</string>
+
+    <string id="cadran">Cadran</string>
+    <string id="cadran_0">Casio Digital</string>
+    <string id="cadran_1">Casio Analog</string>
 </strings>

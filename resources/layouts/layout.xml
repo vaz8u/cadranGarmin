@@ -47,4 +47,25 @@
         <label id="TemperatureLabel" x="130" y="140"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="0xE2782E" />
         <label id="WeatherIcon"  x="85" y="145"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="0xE2782E" />
     </layout>
+
+    <layout id="WatchFaceAnalog" background="Graphics.COLOR_TRANSPARENT">
+        <bitmap id="omega" filename="../omega1.png" />
+        <bitmap id="aiguille_heure" filename="../heures.png" />
+        <bitmap id="aiguille_minute" filename="../minutes.png" />
+        <bitmap id="aiguille_seconde" filename="../secondes.png" />
+        <bitmap id="aiguille_gauche" filename="../pg.png" />
+        <bitmap id="aiguille_droite" filename="../pd.png" />
+        <bitmap id="aiguille_bas" filename="../pb.png" />
+    </layout>
+
+    <layout id="WatchFaceAnalogNight" background="Graphics.COLOR_TRANSPARENT">
+        <bitmap id="omega" filename="../omega1.png" />
+        <bitmap id="aiguille_heure" filename="../heures.png" />
+        <bitmap id="aiguille_minute" filename="../minutes.png" />
+        <bitmap id="aiguille_seconde" filename="../secondes.png" />
+        <bitmap id="aiguille_gauche" filename="../pg.png" />
+        <bitmap id="aiguille_droite" filename="../pd.png" />
+        <bitmap id="aiguille_bas" filename="../pb.png" />
+        
+    </layout>
 </layouts>
