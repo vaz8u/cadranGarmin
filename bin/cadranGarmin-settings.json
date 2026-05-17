@@ -16,6 +16,12 @@
     }, {
       "display" : "cadran_1",
       "value" : 1
+    }, {
+      "display" : "cadran_2",
+      "value" : 2
+    }, {
+      "display" : "cadran_3",
+      "value" : 3
     } ],
     "configMin" : null,
     "configMax" : null,
@@ -52,6 +58,8 @@
       "affichage_auto" : "Auto (selon l'heure)",
       "cadran_1" : "Casio Analog",
       "cadran_0" : "Casio Digital",
+      "cadran_3" : "Cadran Basique",
+      "cadran_2" : "Vide (Template)",
       "affichage_normal" : "Jour",
       "cadran" : "Cadran",
       "affichage_nuit" : "Nuit",

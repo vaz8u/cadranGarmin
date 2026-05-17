@@ -1,4 +1,7 @@
 <layouts>
+    <!-- ==========================================
+         LAYOUT 0 : CASIO DIGITAL (Jour)
+         ========================================== -->
     <layout id="WatchFace" background="Graphics.COLOR_TRANSPARENT">
         <bitmap id="g1" filename="../g1.png" />
 
@@ -24,6 +27,9 @@
         <label id="WeatherIcon"  x="85" y="145"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="0x000000" />
     </layout>
 
+    <!-- ==========================================
+         LAYOUT 0 : CASIO DIGITAL (Nuit)
+         ========================================== -->
     <layout id="WatchFaceNight" background="Graphics.COLOR_TRANSPARENT">
         <bitmap id="g2" filename="../g2_n.png" />
         <!-- Background -->
@@ -48,11 +54,50 @@
         <label id="WeatherIcon"  x="85" y="145"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="0xE2782E" />
     </layout>
 
+    <!-- ==========================================
+         LAYOUT 1 : CASIO ANALOG (Jour)
+         ========================================== -->
     <layout id="WatchFaceAnalog" background="Graphics.COLOR_TRANSPARENT">
         <bitmap id="omega" filename="../omega1.png" />
     </layout>
 
+    <!-- ==========================================
+         LAYOUT 1 : CASIO ANALOG (Nuit)
+         ========================================== -->
     <layout id="WatchFaceAnalogNight" background="Graphics.COLOR_TRANSPARENT">
         <bitmap id="omega" filename="../omega1.png" />
     </layout>
+
+    <!-- ==========================================
+         LAYOUT 2 : VIDE (Template)
+         ========================================== -->
+    <layout id="WatchFaceVide" background="Graphics.COLOR_BLACK">
+    </layout>
+
+    <!-- ==========================================
+         LAYOUT 3 : DIGITAL BASIQUE
+         ========================================== -->
+    <layout id="WatchFaceDigitalBasique" background="Graphics.COLOR_BLACK">
+        <!-- Background -->
+        <label id='_HourLabel'    x='85' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x1e272c' />
+        <label id='_HourLabel2'   x='130' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x1e272c' />
+        <label id='_MinuteLabel'  x='190' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x1e272c' />
+        <label id='_MinuteLabel2' x='235' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x1e272c' />
+        <label id='_SecondLabel'  x='275' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x1e272c' />
+        <label id='_SecondLabel2' x='305' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='0x1e272c' />
+        <!-- Heure, minutes secondes clignos -->
+        <label id='HourLabel'     x='85' y='175'    justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+        <label id='HourLabel2'    x='130' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+        <label id='MinuteLabel'   x='190' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+        <label id='MinuteLabel2'  x='235' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+        <label id='SecondLabel'   x='275' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+        <label id='SecondLabel2'  x='305' y='193'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+        <label id='ColonLabel'    x='160' y='175'   justification='Graphics.TEXT_JUSTIFY_CENTER' color='Graphics.COLOR_WHITE' />
+
+        <label id="DayNameLabel"    x="270" y="140"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+
+        <label id="TemperatureLabel" x="130" y="140"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+        <label id="WeatherIcon"  x="85" y="145"  justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    </layout>
+
 </layouts>

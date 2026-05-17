@@ -9,4 +9,6 @@
     <string id="cadran">Cadran</string>
     <string id="cadran_0">Casio Digital</string>
     <string id="cadran_1">Casio Analog</string>
+    <string id="cadran_2">Vide (Template)</string>
+    <string id="cadran_3">Cadran Basique</string>
 </strings>

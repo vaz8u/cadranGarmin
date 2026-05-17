@@ -22,6 +22,8 @@
             <settingConfig type="list">
                 <listEntry value="0">@Strings.cadran_0</listEntry>
                 <listEntry value="1">@Strings.cadran_1</listEntry>
+                <listEntry value="2">@Strings.cadran_2</listEntry>
+                <listEntry value="3">@Strings.cadran_3</listEntry>
             </settingConfig>
         </setting>
         <setting propertyKey="@Properties.affichage" title="@Strings.affichage" prompt="@Strings.affichage" >
